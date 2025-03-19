@@ -13,6 +13,7 @@ const path = require('path');
 // Aumentar o timeout para 5 minutos
 app.use(express.json({ limit: '10mb', extended: true }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
+app.use(express.static(path.join(__dirname))); 
 
 
 
@@ -691,30 +692,29 @@ app.post('/chat', async (req, res) => {
     }
 });
 
-// Rotas da aplicação
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.get('/upload', (req, res) => {
-    res.sendFile(__dirname + '/upload.html');
+    res.sendFile(path.join(__dirname, 'upload.html'));
 });
 
 app.get('/comparar', (req, res) => {
-    res.sendFile(__dirname + '/comparar.html');
+    res.sendFile(path.join(__dirname, 'comparar.html'));
 });
 
 app.get('/contexto', (req, res) => {
-    res.sendFile(__dirname + '/home.html');
+    res.sendFile(path.join(__dirname, 'home.html'));
 });
 
 app.get('/landing', (req, res) => {
-    res.sendFile(__dirname + '/landing.html');
+    res.sendFile(path.join(__dirname, 'landing.html'));
 });
 
-// Add new route for login page
+// Rota para a página de login
 app.get('/login', (req, res) => {
-    res.sendFile(__dirname + '/login.html');
+    res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 // Configuração do cliente Groq
