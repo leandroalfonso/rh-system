@@ -18,14 +18,12 @@ app.use(express.static(path.join(__dirname)));
 
 
 // Função para dividir texto em chunks menores
-function dividirTextoEmChunks(texto, tamanhoMaximo = 3000) {
-    // Dividir por parágrafos para manter contexto
+function dividirTextoEmChunks(texto, tamanhoMaximo = 2000) { // Reduzido para 2000 tokens
     const paragrafos = texto.split(/\n\s*\n/);
     const chunks = [];
     let chunkAtual = '';
     
     for (const paragrafo of paragrafos) {
-        // Se adicionar este parágrafo exceder o tamanho máximo
         if ((chunkAtual + paragrafo).length > tamanhoMaximo && chunkAtual.length > 0) {
             chunks.push(chunkAtual);
             chunkAtual = paragrafo;
@@ -34,7 +32,6 @@ function dividirTextoEmChunks(texto, tamanhoMaximo = 3000) {
         }
     }
     
-    // Adicionar o último chunk se não estiver vazio
     if (chunkAtual.length > 0) {
         chunks.push(chunkAtual);
     }
@@ -46,36 +43,36 @@ function dividirTextoEmChunks(texto, tamanhoMaximo = 3000) {
 async function processarChunksComRateLimit(chunks, processarFuncao) {
     const resultados = [];
     const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-    
+    const maxTokensPorChunk = 2000; // Reduzido para garantir que não exceda o limite
+
     for (let i = 0; i < chunks.length; i++) {
         try {
-            console.log(`Processando chunk ${i+1}/${chunks.length}...`);
+            console.log(`Processando chunk ${i + 1}/${chunks.length}...`);
+            
+            if (chunks[i].length > maxTokensPorChunk) {
+                console.log(`Chunk ${i + 1} excede o limite de tokens, dividindo...`);
+                const subChunks = dividirTextoEmChunks(chunks[i], maxTokensPorChunk);
+                const subResultados = await processarChunksComRateLimit(subChunks, processarFuncao);
+                resultados.push(...subResultados);
+                continue;
+            }
+
             const resultado = await processarFuncao(chunks[i]);
             resultados.push(resultado);
-            
-            // Adiciona um delay entre as chamadas para evitar rate limiting
+
             if (i < chunks.length - 1) {
                 console.log('Aguardando 1 segundo antes do próximo chunk...');
                 await delay(1000);
             }
         } catch (error) {
-            console.error(`Erro ao processar chunk ${i+1}:`, error);
-            // Adiciona um delay maior em caso de erro
+            console.error(`Erro ao processar chunk ${i + 1}:`, error);
             console.log('Erro detectado, aguardando 5 segundos...');
             await delay(5000);
-            // Tenta novamente com um chunk menor se for erro de tamanho
-            if (error.status === 413 && chunks[i].length > 1500) {
-                const subChunks = dividirTextoEmChunks(chunks[i], 1500);
-                console.log(`Dividindo chunk problemático em ${subChunks.length} sub-chunks menores`);
-                const subResultados = await processarChunksComRateLimit(subChunks, processarFuncao);
-                resultados.push(...subResultados);
-            } else {
-                // Se não for erro de tamanho, adiciona um placeholder
-                resultados.push("Não foi possível processar esta parte do documento.");
-            }
+
+            resultados.push("Não foi possível processar esta parte do documento.");
         }
     }
-    
+
     return resultados;
 }
 
