@@ -1,260 +1,86 @@
 {
-  "curriculo": {
-    "nome": "** Joelson Lemos",
-    "conteudo": "Aqui está a análise do texto de currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Desenvolvedor de sistemas com experiência em Front-End e Back-End, suporte e administração de sistemas, atendimento ao usuário e gestão de serviços de TI.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Eliane Porcelanato** (2011 à 2022)\n\t+ Cargo: Controle de Qualidade\n\t+ Responsabilidades: Não mencionadas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Não mencionadas\n* **TI - Angeloni** (2023 à 2024)\n\t+ Cargo: Suporte - SD\n\t+ Responsabilidades: Não mencionadas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Não mencionadas\n* **mercado PJ** (2015 à 2024)\n\t+ Cargo: Desenvolvimento de sistemas WEB\n\t+ Responsabilidades: Desenvolvimento de sistemas WEB\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Node, Python, Mysql, PHP, Linux, Docker\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Gestão da Tecnologia da Informação TGTI** (2022 à 2025)\n\t+ Instituição: Faculdades Senac\n\t+ Período: 2022 à 2025\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n* **Sistemas de Informação** (2014 à 2018)\n\t+ Instituição: Faculdades Esucri\n\t+ Período: 2014 à 2018\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ FrontEnd: HTML, JS, CSS, React, Bootstrap\n\t+ BackEnd: Node, Python, Mysql, PHP, Linux, Docker\n* **Soft Skills:** Não mencionadas\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:** Não mencionadas\n\n**IDIOMAS:** Não mencionados\n\n**PROJETOS:** Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:** Não mencionadas\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Rua Virgínia da luz bernarda - Sto Antônio - Criciúma SC\n* **Preferências de trabalho:** Desenvolvimento de sistemas, Suporte a sistemas, Atendimento ao usuário\n* **Objetivos profissionais:** Atuar na área de Desenvolvimento de sistemas, Suporte a sistemas, Atendimento ao usuário\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado",
-    "nomeArquivo": "curriculo",
-    "categorias": {
-      "areaPrincipal": "TI",
-      "areasSecundarias": [
-        "Desenvolvimento Web",
-        "Suporte",
-        "Administração de Sistemas"
-      ],
-      "palavrasChave": [
-        "Desenvolvedor de sistemas",
-        "Front-End",
-        "Back-End",
-        "Node",
-        "Python",
-        "Mysql",
-        "PHP",
-        "Linux",
-        "Docker"
-      ],
-      "nivel": "pleno",
-      "categoriasEspecificas": [
-        "Desenvolvimento Web",
-        "Suporte a sistemas",
-        "Atendimento ao usuário"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:15:46.278Z",
-    "ultimaAtualizacao": "2025-03-19T15:15:46.278Z"
-  },
-  "curriculo_leandro-angeloni_240429_073836": {
-    "nome": "** Fernando pereira",
-    "conteudo": "Aqui está a análise do texto de currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Não há um resumo profissional detalhado no currículo.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Empresa:** Eliane Porcelanato\n* **Cargo:** Sistema e controle de qualidade\n* **Período:** 2014-2015/2016\n* **Responsabilidades:** Não mencionadas\n* **Projetos:** Não mencionados\n* **Conquistas:** Não mencionadas\n* **Tecnologias utilizadas:** Não mencionadas\n\n* **Empresa:** Freelancer independente\n* **Cargo:** Desenvolvimento de websites e sistemas\n* **Período:** 2011-2022\n* **Responsabilidades:** Desenvolvimento de sites, manutenção de softwares, dar apoio na manutenção de computadores e programas.\n* **Projetos:** Não mencionados\n* **Conquistas:** Não mencionadas\n* **Tecnologias utilizadas:** PHP, MYSQL, node, JS, Pacote Office (Word, Excel, PowerPoint), Photoshop.\n\n* **Empresa:** Rede Angeloni ACAC\n* **Cargo:** Service Desk, Suporte ao cliente\n* **Período:** 2023 (6 meses)\n* **Responsabilidades:** Suporte ao cliente\n* **Projetos:** Não mencionados\n* **Conquistas:** Não mencionadas\n* **Tecnologias utilizadas:** Não mencionadas\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Curso:** Sistemas de Informação\n* **Instituição:** Universidade PUC-RS\n* **Período:** Não mencionado\n* **Trabalhos relevantes:** Não mencionados\n* **Média/Notas:** Não mencionadas\n\n* **Curso:** Gestão em Tecnologia da Informação\n* **Instituição:** Faculdades Senac Cricúma-sc\n* **Período:** 2023-2025 (em andamento)\n* **Trabalhos relevantes:** Não mencionados\n* **Média/Notas:** Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:** Programação web, Desenvolvimento de sites, Manutenção de softwares, PHP, MYSQL, node, JS, Pacote Office (Word, Excel, PowerPoint), Photoshop.\n* **Soft Skills:** Trabalhar com público\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:** Não mencionadas\n\n**IDIOMAS:**\n\n* **Idioma:** Inglês\n* **Nível:** Intermediário\n* **Certificações:** Não mencionadas\n\n* **Idioma:** Espanhol\n* **Nível:** Intermediário\n* **Certificações:** Não mencionadas\n\n**PROJETOS:** Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:** Não mencionadas\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Criciuma, SC\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Não mencionados\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado\n* **Contato:** (48)9 9134-1448 whatsapp, leandro.alfonso@alunos.sc.senac.br\n* **Endereço:** Virginia da Luz Bernarda, 196, B. Santo Antônio",
-    "nomeArquivo": "curriculo_leandro-angeloni_240429_073836",
-    "categorias": {
-      "areaPrincipal": "TI",
-      "areasSecundarias": [
-        "Desenvolvimento Web",
-        "Suporte ao cliente"
-      ],
-      "palavrasChave": [
-        "Desenvolvimento de websites",
-        "Sistema e controle de qualidade",
-        "PHP",
-        "MYSQL",
-        "node",
-        "JS",
-        "Photoshop"
-      ],
-      "nivel": "pleno",
-      "categoriasEspecificas": [
-        "Desenvolvimento Web",
-        "Suporte ao cliente"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:15:50.266Z",
-    "ultimaAtualizacao": "2025-03-19T15:15:50.267Z"
-  },
-  "curriculo-atual": {
-    "nome": "** Tiago Almeida",
-    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Não há um resumo profissional detalhado no currículo. No entanto, é possível inferir que o candidato tem experiência em desenvolvimento de sistemas, suporte a sistemas e atendimento ao usuário.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Eliane Porcelanato (2011 à 2023)**\n\t+ Cargo: Controle de Qualidade\n\t+ Período: 2011 à 2023\n\t+ Responsabilidades: Não mencionadas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Não mencionadas\n* **TI - Angeloni - Suporte - SD (2023 à 2025)**\n\t+ Cargo: Suporte\n\t+ Período: 2023 à 2025\n\t+ Responsabilidades: Não mencionadas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Não mencionadas\n* **Atuação no mercado PJ - desenvolvimento de sistemas WEB (2015 à 2024)**\n\t+ Cargo: Desenvolvedor de sistemas\n\t+ Período: 2015 à 2024\n\t+ Responsabilidades: Desenvolvimento de sistemas WEB\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Node, Python, Mysql, PHP, Linux, Docker\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Gestão da Tecnologia da Informação (TGTI) - Faculdades Senac**\n\t+ Curso: Gestão da Tecnologia da Informação\n\t+ Instituição: Faculdades Senac\n\t+ Período: 2022 à 2025\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n* **Sistemas de Informação - Faculdades Esucri**\n\t+ Curso: Sistemas de Informação\n\t+ Instituição: Faculdades Esucri\n\t+ Período: 2014 à 2018\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ FrontEnd: HTML, JS, CSS, React\n\t+ BackEnd: Node, Python, Mysql, PHP, Linux\n\t+ Containers: Docker\n\t+ Ferramentas: Zabbix (monitoramento), GLPI (gestão de chamados)\n* **Soft Skills:** Não mencionadas\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:** Não mencionadas\n\n**IDIOMAS:** Não mencionados\n\n**PROJETOS:** Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:** Não mencionadas\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Rua Virgínia da luz bernarda - Sto Antônio - Criciúma SC\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Atuar na área de Desenvolvimento de sistemas, Suporte a sistemas, Atendimento ao usuário\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado",
-    "nomeArquivo": "curriculo-atual",
-    "categorias": {
-      "areaPrincipal": "TI",
-      "areasSecundarias": [
-        "Desenvolvimento de Sistemas",
-        "Suporte",
-        "Atendimento ao Usuário"
-      ],
-      "palavrasChave": [
-        "Desenvolvimento Web",
-        "Node",
-        "Python",
-        "Mysql",
-        "PHP",
-        "Linux",
-        "Docker"
-      ],
-      "nivel": "pleno",
-      "categoriasEspecificas": [
-        "Desenvolvimento Web",
-        "Suporte a Sistemas",
-        "Atendimento ao Usuário"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:16:07.870Z",
-    "ultimaAtualizacao": "2025-03-19T15:16:07.870Z"
-  },
-  "curriculo-maria-da-silva": {
-    "nome": "** Maria da Silva",
-    "conteudo": "Aqui está a análise do texto de currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Profissional de contabilidade com mais de 10 anos de experiência, buscando oportunidades para aplicar conhecimentos em análise financeira e gestão contábil.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Empresa:** XYZ\n* **Cargo:** Analista Contábil Sênior\n* **Período:** Janeiro de 2018 - Presente\n* **Responsabilidades:**\n\t+ Elaboração de demonstrações financeiras e relatórios gerenciais\n\t+ Coordenação de equipes na execução de auditorias internas\n\t+ Análise e conciliação de contas contábeis\n* **Projetos:** Nenhum mencionado\n* **Conquistas:** Nenhuma mencionada\n* **Tecnologias utilizadas:** Nenhuma mencionada\n\n* **Empresa:** ABC\n* **Cargo:** Analista Contábil Pleno\n* **Período:** Março de 2014 - Dezembro de 2017\n* **Responsabilidades:**\n\t+ Execução de lançamentos contábeis e conciliações bancárias\n\t+ Participação na implantação de sistemas ERP\n\t+ Apoio na elaboração de balanços patrimoniais\n* **Projetos:** Nenhum mencionado\n* **Conquistas:** Nenhuma mencionada\n* **Tecnologias utilizadas:** ERP (SAP, TOTVS)\n\n* **Empresa:** DEF\n* **Cargo:** Assistente Contábil\n* **Período:** Julho de 2012 - Fevereiro de 2014\n* **Responsabilidades:**\n\t+ Classificação e lançamento de documentos contábeis\n\t+ Auxílio na preparação de declarações fiscais\n\t+ Atendimento a auditorias externas\n* **Projetos:** Nenhum mencionado\n* **Conquistas:** Nenhuma mencionada\n* **Tecnologias utilizadas:** Nenhuma mencionada\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Curso:** Bacharel em Ciências Contábeis\n* **Instituição:** Universidade de São Paulo (USP)\n* **Período:** Conclusão em 2012\n* **Trabalhos relevantes:** Nenhum mencionado\n* **Média/Notas:** Nenhuma mencionada\n\n**FORMAÇÃO COMPLEMENTAR:**\n\n* **Curso:** Curso de Atualização em Normas Internacionais de Contabilidade (IFRS)\n* **Instituição:** Fundação Instituto de Pesquisas Contábeis, Atuariais e Financeiras (FIPECAFI)\n* **Período:** 2019\n* **Trabalhos relevantes:** Nenhum mencionado\n* **Média/Notas:** Nenhuma mencionada\n\n* **Curso:** Workshop de Gestão de Tributos\n* **Instituição:** SENAC São Paulo\n* **Período:** 2017\n* **Trabalhos relevantes:** Nenhum mencionado\n* **Média/Notas:** Nenhuma mencionada\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Conhecimento avançado em legislação tributária\n\t+ Domínio do pacote Office e sistemas ERP (SAP, TOTVS)\n* **Soft Skills:**\n\t+ Perfil analítico e atenção aos detalhes\n* **Nível de proficiência:** Não mencionado\n\n**IDIOMAS:**\n\n* **Idioma:** Inglês\n* **Nível:** Intermediário\n* **Certificações:** Nenhuma mencionada\n\n**PROJETOS:** Nenhum mencionado\n\n**CONQUISTAS E REALIZAÇÕES:** Nenhuma mencionada\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** São Paulo, SP\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Buscando oportunidades para aplicar conhecimentos em análise financeira e gestão contábil\n* **Links:** Não mencionados\n* **Publicações:** Nenhuma mencionada\n* **Palestras:** Nenhuma mencionada\n* **Participação em eventos:** Nenhuma mencionada\n* **Voluntariado:** Nenhum mencionado",
-    "nomeArquivo": "curriculo-maria-da-silva",
-    "categorias": {
-      "areaPrincipal": "Contabilidade",
-      "areasSecundarias": [
-        "Análise Financeira",
-        "Gestão Contábil",
-        "Tributação"
-      ],
-      "palavrasChave": [
-        "Análise Financeira",
-        "Gestão Contábil",
-        "Legislação Tributária",
-        "ERP",
-        "SAP",
-        "TOTVS"
-      ],
-      "nivel": "senior",
-      "categoriasEspecificas": [
-        "Contabilidade Fiscal",
-        "Análise Contábil",
-        "Gestão de Tributos"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:43:25.909Z",
-    "ultimaAtualizacao": "2025-03-19T15:43:25.909Z"
-  },
-  "joao-pereira-curriculo": {
-    "nome": "** João Pereira",
-    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Profissional de Tecnologia da Informação com mais de 8 anos de experiência, buscando oportunidades para aplicar conhecimentos em desenvolvimento de software e gestão de projetos tecnológicos.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n1. **Desenvolvedor de Software Sênior**\n\t* Empresa: Tech Solutions Ltda\n\t* Cargo: Desenvolvedor de Software Sênior\n\t* Período: Março de 2019 – Presente\n\t* Responsabilidades:\n\t\t+ Liderança de equipe no desenvolvimento de aplicações web utilizando Java e Spring Framework\n\t\t+ Implementação de soluções de microserviços, melhorando a escalabilidade dos sistemas em 25%\n\t\t+ Colaboração na arquitetura de sistemas orientados a serviços (SOA)\n\t* Projetos: Não mencionados\n\t* Conquistas: Implementação de soluções de microserviços, melhorando a escalabilidade dos sistemas em 25%\n\t* Tecnologias utilizadas: Java, Spring Framework\n2. **Analista de Sistemas Pleno**\n\t* Empresa: InovaTech Corp\n\t* Cargo: Analista de Sistemas Pleno\n\t* Período: Janeiro de 2016 – Fevereiro de 2019\n\t* Responsabilidades:\n\t\t+ Desenvolvimento e manutenção de sistemas corporativos em .NET e C#\n\t\t+ Participação na migração de sistemas legados para novas tecnologias, reduzindo custos de manutenção em 15%\n\t\t+ Análise e otimização de desempenho de banco de dados SQL Server\n\t* Projetos: Não mencionados\n\t* Conquistas: Participação na migração de sistemas legados para novas tecnologias, reduzindo custos de manutenção em 15%\n\t* Tecnologias utilizadas: .NET, C#, SQL Server\n3. **Estagiário em Desenvolvimento de Software**\n\t* Empresa: SoftTech Solutions\n\t* Cargo: Estagiário em Desenvolvimento de Software\n\t* Período: Julho de 2014 – Dezembro de 2015\n\t* Responsabilidades:\n\t\t+ Apoio no desenvolvimento de módulos para sistemas ERP utilizando Python e Django\n\t\t+ Testes e validação de funcionalidades em ambientes de homologação\n\t\t+ Documentação de processos e funcionalidades desenvolvidas\n\t* Projetos: Não mencionados\n\t* Conquistas: Não mencionados\n\t* Tecnologias utilizadas: Python, Django\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Bacharel em Ciência da Computação**\n\t+ Instituição: Universidade Federal de São Paulo (UNIFESP)\n\t+ Período: Conclusão em 2015\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionados\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Linguagens de programação: Java, C#, Python\n\t+ Frameworks: Spring, .NET, Django\n\t+ Bancos de dados: SQL Server, MySQL, MongoDB\n\t+ Ferramentas de versionamento: Git, SVN\n* **Soft Skills:**\n\t+ Metodologias ágeis: Scrum, Kanban\n\t+ Inglês avançado\n\t+ Perfil analítico e foco em resolução de problemas\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:**\n\n* **Oracle Certified Professional, Java SE Programmer**\n\t+ Data/Validade: 2018\n\t+ Código/ID: Não mencionado\n* **Microsoft Certified: Azure Developer Associate**\n\t+ Data/Validade: 2020\n\t+ Código/ID: Não mencionado\n\n**IDIOMAS:**\n\n* **Inglês**\n\t+ Nível: Avançado\n\t+ Certificações: Não mencionadas\n\n**PROJETOS:**\n\n* Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:**\n\n* Implementação de soluções de microserviços, melhorando a escalabilidade dos sistemas em 25%\n* Participação na migração de sistemas legados para novas tecnologias, reduzindo custos de manutenção em 15%\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** São Paulo, SP\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Buscando oportunidades para aplicar conhecimentos em desenvolvimento de software e gestão de projetos tecnológicos\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado",
-    "nomeArquivo": "joao-pereira-curriculo",
-    "categorias": {
-      "areaPrincipal": "TI",
-      "areasSecundarias": [
-        "Desenvolvimento de Software",
-        "Gestão de Projetos"
-      ],
-      "palavrasChave": [
-        "Desenvolvimento Web",
-        "Microserviços",
-        "SOA",
-        "Java",
-        "Spring Framework",
-        ".NET",
-        "C#",
-        "SQL Server",
-        "Python",
-        "Django"
-      ],
-      "nivel": "senior",
-      "categoriasEspecificas": [
-        "Desenvolvimento de Software",
-        "Gestão de Projetos",
-        "Arquitetura de Sistemas",
-        "Desenvolvimento Web"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:45:47.581Z",
-    "ultimaAtualizacao": "2025-03-19T15:45:47.581Z"
-  },
-  "ana-paula-curriculo": {
-    "nome": "** Ana Paula Oliveira",
-    "conteudo": "Aqui está a análise do texto de currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Profissional de contabilidade com 7 anos de experiência, buscando oportunidades para aplicar conhecimentos em auditoria e gestão financeira, contribuindo para a saúde financeira da organização.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n1. **Empresa:** Finanças & Cia\n**Cargo:** Analista Contábil Sênior\n**Período:** Abril de 2020 - Presente\n**Responsabilidades:**\n\t* Coordenação de processos de auditoria interna e externa\n\t* Elaboração e análise de demonstrações financeiras\n\t* Implementação de controles internos, reduzindo riscos fiscais em 20%\n**Projetos:** Não mencionados\n**Conquistas:** Redução de riscos fiscais em 20%\n**Tecnologias utilizadas:** Não mencionadas\n\n2. **Empresa:** Contábil SC Ltda\n**Cargo:** Analista Contábil Pleno\n**Período:** Janeiro de 2018 - Março de 2020\n**Responsabilidades:**\n\t* Responsável pela conciliação bancária e fechamento contábil mensal\n\t* Apoio na implantação de sistema ERP, otimizando processos financeiros\n\t* Preparação de relatórios gerenciais para tomada de decisão\n**Projetos:** Não mencionados\n**Conquistas:** Otimização de processos financeiros com a implantação de sistema ERP\n**Tecnologias utilizadas:** ERP\n\n3. **Empresa:** ABC Contabilidade\n**Cargo:** Assistente Contábil\n**Período:** Março de 2016 - Dezembro de 2017\n**Responsabilidades:**\n\t* Classificação e lançamento de documentos fiscais\n\t* Auxílio na apuração de impostos e preenchimento de obrigações acessórias\n\t* Atendimento a clientes e suporte em questões fiscais\n**Projetos:** Não mencionados\n**Conquistas:** Não mencionadas\n**Tecnologias utilizadas:** Não mencionadas\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Curso:** Bacharel em Ciências Contábeis\n* **Instituição:** Universidade Federal de Santa Catarina (UFSC)\n* **Período:** Conclusão em 2016\n* **Trabalhos relevantes:** Não mencionados\n* **Média/Notas:** Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Conhecimento avançado em legislação tributária e fiscal\n\t+ Domínio de softwares contábeis (Protheus, SAP) e pacote Office\n* **Soft Skills:**\n\t+ Capacidade analítica e atenção aos detalhes\n\t+ Boa comunicação e trabalho em equipe\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:**\n\n* **Nome:** Certificação em IFRS\n* **Instituição:** Fundação Brasileira de Contabilidade\n* **Data/Validade:** 2019\n* **Código/ID:** Não mencionado\n* **Nome:** Especialização em Auditoria e Controladoria\n* **Instituição:** FGV\n* **Data/Validade:** 2021\n* **Código/ID:** Não mencionado\n\n**IDIOMAS:**\n\n* **Idioma:** Inglês\n* **Nível:** Avançado\n* **Certificações:** Não mencionadas\n\n**PROJETOS:** Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:**\n\n* Redução de riscos fiscais em 20%\n* Otimização de processos financeiros com a implantação de sistema ERP\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Florianópolis, SC\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Contribuir para a saúde financeira da organização\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado",
-    "nomeArquivo": "ana-paula-curriculo",
-    "categorias": {
-      "areaPrincipal": "Contabilidade",
-      "areasSecundarias": [
-        "Administrativo",
-        "Finanças"
-      ],
-      "palavrasChave": [
-        "auditoria",
-        "gestão financeira",
-        "controles internos",
-        "ERP",
-        "legislação tributária"
-      ],
-      "nivel": "senior",
-      "categoriasEspecificas": [
-        "Auditoria Interna",
-        "Gestão Financeira",
-        "Contabilidade Fiscal"
-      ]
-    },
-    "dataCriacao": "2025-03-19T15:46:46.009Z",
-    "ultimaAtualizacao": "2025-03-19T15:46:46.009Z"
-  },
-  "marian-souza-curriculo": {
-    "nome": "** Mariana Souza",
-    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Profissional de manutenção com 5 anos de experiência, buscando oportunidades para aplicar conhecimentos em manutenção preventiva e corretiva, contribuindo para a eficiência operacional da empresa.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Empresa:** Indústria XYZ\n* **Cargo:** Técnica de Manutenção Pleno\n* **Período:** Março de 2021 – Presente\n* **Responsabilidades:**\n\t+ Realização de manutenção preventiva e corretiva em máquinas industriais.\n\t+ Diagnóstico e solução de falhas mecânicas e elétricas.\n* **Projetos:** Implementação de melhorias nos equipamentos, aumentando a eficiência em 15%.\n* **Conquistas:** Aumento de 15% na eficiência dos equipamentos.\n* **Tecnologias utilizadas:** Não mencionadas.\n\n* **Empresa:** Empresa ABC\n* **Cargo:** Assistente de Manutenção\n* **Período:** Janeiro de 2019 – Fevereiro de 2021\n* **Responsabilidades:**\n\t+ Apoio na manutenção de equipamentos de produção.\n\t+ Monitoramento de indicadores de desempenho das máquinas.\n\t+ Participação na instalação de novos equipamentos.\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Curso:** Curso Técnico em Mecânica\n* **Instituição:** Instituto Federal do Paraná (IFPR)\n* **Período:** Conclusão em 2019\n* **Trabalhos relevantes:** Não mencionados.\n* **Média/Notas:** Não disponível.\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Conhecimento em mecânica, elétrica e hidráulica.\n\t+ Leitura e interpretação de desenhos técnicos.\n\t+ Domínio de ferramentas de diagnóstico e medição.\n* **Soft Skills:**\n\t+ Capacidade de trabalhar em equipe e resolver problemas.\n\t+ Disponibilidade para trabalhar em turnos e realizar viagens.\n* **Nível de proficiência:** Não mencionado.\n\n**CERTIFICAÇÕES:**\n\n* **Nome:** NR-10: Segurança em Instalações e Serviços com Eletricidade\n* **Instituição:** Não mencionada\n* **Data/Validade:** 2020\n* **Código/ID:** Não disponível.\n\n* **Nome:** NR-35: Trabalho em Altura\n* **Instituição:** Não mencionada\n* **Data/Validade:** 2021\n* **Código/ID:** Não disponível.\n\n**FORMAÇÃO COMPLEMENTAR:**\n\n* **Curso:** Curso de Manutenção Preditiva\n* **Instituição:** SENAI\n* **Período:** 2022\n* **Trabalhos relevantes:** Não mencionados.\n* **Média/Notas:** Não disponível.\n\n* **Curso:** Workshop de Eficiência Energética\n* **Instituição:** Não mencionada\n* **Período:** 2023\n* **Trabalhos relevantes:** Não mencionados.\n* **Média/Notas:** Não disponível.\n\n**IDIOMAS:** Não mencionados.\n\n**PROJETOS:** Não mencionados.\n\n**CONQUISTAS E REALIZAÇÕES:** Aumento de 15% na eficiência dos equipamentos.\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Disponibilidade para trabalhar em turnos e realizar viagens.\n* **Localização:** Curitiba, PR\n* **Preferências de trabalho:** Não mencionadas.\n* **Objetivos profissionais:** Não mencionados.\n* **Links:** Não mencionados.\n* **Publicações:** Não mencionadas.\n* **Palestras:** Não mencionadas.\n* **Participação em eventos:** Não mencionadas.\n* **Voluntariado:** Não mencionados.",
-    "nomeArquivo": "marian-souza-curriculo",
-    "categorias": {
-      "areaPrincipal": "Manutenção",
-      "areasSecundarias": [
-        "Mecânica",
-        "Elétrica",
-        "Hidráulica"
-      ],
-      "palavrasChave": [
-        "Manutenção Preventiva",
-        "Manutenção Corretiva",
-        "Eficiência Operacional"
-      ],
-      "nivel": "pleno",
-      "categoriasEspecificas": [
-        "Manutenção Industrial",
-        "Mecânica de Precisão"
-      ]
-    },
-    "dataCriacao": "2025-03-19T16:49:17.404Z",
-    "ultimaAtualizacao": "2025-03-19T16:49:17.404Z"
-  },
-  "modified (25)": {
-    "nome": "** Leandro Meira Alfonso",
-    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Desenvolvedor de sistemas com experiência em Front-End e Back-End, suporte e administração de sistemas, atendimento ao usuário e gestão de serviços de TI com base nas práticas do ITIL.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Eliane Porcelanato (2011 à 2022)**\n\t+ Cargo: Controle de Qualidade\n\t+ Período: 2011 à 2022\n\t+ Responsabilidades: Não mencionadas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Não mencionadas\n* **TI - Angeloni (2023 à 2024)**\n\t+ Cargo: Suporte - SD\n\t+ Período: 2023 à 2024\n\t+ Responsabilidades: Suporte e administração de sistemas\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Zabbix (monitoramento) e GLPI (gestão de chamados)\n* **Atuação no mercado PJ (2015 à 2024)**\n\t+ Cargo: Desenvolvedor de sistemas WEB\n\t+ Período: 2015 à 2024\n\t+ Responsabilidades: Desenvolvimento de sistemas WEB\n\t+ Projetos: Não mencionados\n\t+ Conquistas: Não mencionadas\n\t+ Tecnologias utilizadas: Node, Python, Mysql, PHP, Linux, Docker\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Gestão da Tecnologia da Informação (TGTI) - Faculdades Senac (2022)**\n\t+ Curso: Gestão da Tecnologia da Informação (TGTI)\n\t+ Instituição: Faculdades Senac\n\t+ Período: 2022\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n* **Sistemas de Informação - Faculdades Esucri (2014 à 2018)**\n\t+ Curso: Sistemas de Informação\n\t+ Instituição: Faculdades Esucri\n\t+ Período: 2014 à 2018\n\t+ Trabalhos relevantes: Não mencionados\n\t+ Média/Notas: Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ FrontEnd: HTML, JS, CSS, React\n\t+ BackEnd: Node, Python, Mysql, PHP, Linux\n\t+ Outros: Docker, Bootstrap\n* **Soft Skills:**\n\t+ Não mencionadas\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:** Não mencionadas\n\n**IDIOMAS:**\n* **Português:** Nível nativo\n* **Outros idiomas:** Não mencionados\n\n**PROJETOS:** Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:** Não mencionadas\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Rua Virgínia da luz bernarda - Sto Antônio - Criciúma SC\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Atuar na área de Desenvolvimento de sistemas, Suporte a sistemas, Atendimento ao usuário\n* **Links:** Não mencionados\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado",
-    "nomeArquivo": "modified (25)",
-    "categorias": {
-      "areaPrincipal": "TI",
-      "areasSecundarias": [
-        "Desenvolvimento Web",
-        "Suporte"
-      ],
-      "palavrasChave": [
-        "Desenvolvimento de sistemas",
-        "Front-End",
-        "Back-End",
-        "ITIL",
-        "Suporte",
-        "Administração de sistemas"
-      ],
-      "nivel": "pleno",
-      "categoriasEspecificas": [
-        "Desenvolvimento Web",
-        "Suporte a sistemas",
-        "Atendimento ao usuário"
-      ]
-    },
-    "dataCriacao": "2025-03-19T16:41:38.271Z",
-    "ultimaAtualizacao": "2025-03-19T16:41:38.271Z"
-  },
   "MARIA-FERNANDA-CURRICULO": {
     "nome": "** Maria Fernanda Oliveira",
-    "conteudo": "Aqui está a análise do currículo de Maria Fernanda Oliveira:\n\n**\n**RESUMO PROFISSIONAL:**\nProfissional da área contábil com experiência em auditoria, planejamento tributário e contabilidade financeira, buscando contribuir com minha habilidade analítica e expertise em sistemas contábeis para otimização de processos e tomada de decisões estratégicas.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Analista Contábil**, Contábil Solutions (Jan 2022 - Presente)\n\t+ Responsabilidades: Elaboração e análise de balancetes, demonstrações financeiras e relatórios contábeis; Apoio na auditoria interna; Apuração de impostos e gestão do cumprimento das obrigações acessórias; Participação na implementação e otimização de processos de controle de custos e despesas; Preparação e envio de declarações fiscais para órgãos governamentais.\n\t+ Projetos: Implementação e otimização de processos de controle de custos e despesas.\n\t+ Conquistas: Não mencionadas.\n\t+ Tecnologias utilizadas: Não mencionadas.\n* **Assistente de Contabilidade**, MFS Contadores Associados (Jul 2020 - Dez 2021)\n\t+ Responsabilidades: Auxílio no fechamento contábil mensal; Elaboração de relatórios de análises financeiras; Suporte na apuração de tributos e contribuições federais, estaduais e municipais; Realização de controles de fluxo de caixa e de contas correntes.\n\t+ Projetos: Não mencionados.\n\t+ Conquistas: Não mencionadas.\n\t+ Tecnologias utilizadas: Não mencionadas.\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Bacharel em Ciências Contábeis**, Universidade do Estado do Rio de Janeiro (UERJ) (2017-2021)\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:** Sistemas Contábeis (Protheus, Totvs, Sage, ERP SAP); Softwares (Excel Avançado, Power BI, Contmatic); Contabilidade e Tributação (Planejamento Tributário, Apuração de Impostos, Escrituração Fiscal, DCTF, ECF, SPED); Contabilidade Gerencial (Análise de Custos, Fluxo de Caixa, Demonstrações Financeiras); Auditoria e Compliance (Auditoria Interna, Contabilidade de Custos); Outros (Legislação Fiscal, Contabilidade Internacional (IFRS))\n* **Soft Skills:** Não mencionadas.\n* **Nível de proficiência:** Não mencionado.\n\n**CERTIFICAÇÕES:**\n\n* **Certificação em Contabilidade Tributária**, CFC (Conselho Federal de Contabilidade) (2022)\n* **Curso de Planejamento Tributário**, FGV (2021)\n* **Certificação em Auditoria Interna**, IBGC (Instituto Brasileiro de Governança Corporativa) (2020)\n\n**IDIOMAS:**\n\n* **Português:** Nativo\n* **Inglês:** Intermediário (leitura, escrita e conversação)\n\n**PROJETOS:**\n\n* **Consultoria de Planejamento Tributário para Pequenos Negócios**\n\t+ Descrição: Auxílio a pequenas empresas na organização fiscal e tributária, promovendo economia tributária e evitando erros em declarações fiscais.\n\t+ Tecnologias: Não mencionadas.\n\t+ Resultados: Não mencionados.\n\n**CONQUISTAS E REALIZAÇÕES:**\nNão mencionadas.\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada.\n* **Localização:** Rio de Janeiro, RJ\n* **Preferências de trabalho:** Não mencionadas.\n* **Objetivos profissionais:** Contribuir com minha habilidade analítica e expertise em sistemas contábeis para otimização de processos e tomada de decisões estratégicas.\n* **Links:** LinkedIn (linkedin.com/in/mariafernandaoliveira)\n* **Publicações:** Não mencionadas.\n* **Palestras:** Não mencionadas.\n* **Participação em eventos:** Não mencionadas.\n* **Voluntariado:** Não mencionado.\n\n--- Próxima Seção ---\n\nComo o texto fornecido não é um currículo completo, não há informações suficientes para preencher todos os campos solicitados. No entanto, farei o meu melhor para extrair as informações possíveis.\n\n**NOME_CANDIDATO:** Não informado\n\n**RESUMO PROFISSIONAL:** Não informado\n\n**EXPERIÊNCIA PROFISSIONAL:**\n- Empresa: Não informado\n- Cargo: Consultor financeiro e contábil\n- Período: Não informado\n- Responsabilidades: Gestão de fluxo de caixa para startups, consultoria financeira e contábil\n- Projetos: Não informado\n- Conquistas: Não informado\n- Tecnologias utilizadas: Não informado\n\n**FORMAÇÃO ACADÊMICA:** Não informado\n\n**HABILIDADES TÉCNICAS:**\n- Hard Skills: Não informado\n- Soft Skills: Não informado\n- Nível de proficiência: Não informado\n\n**CERTIFICAÇÕES:** Não informado\n\n**IDIOMAS:** Não informado\n\n**PROJETOS:**\n- Nome: Gestão de Fluxo de Caixa para Startups\n- Descrição: Consultoria financeira e contábil para startups locais, auxiliando na projeção de fluxo de caixa e análise de viabilidade financeira\n- Tecnologias: Não informado\n- Resultados: Não informado\n\n**CONQUISTAS E REALIZAÇÕES:** Não informado\n\n**INFORMAÇÕES ADICIONAIS:**\n- Disponibilidade: Não informado\n- Localização: Não informado\n- Preferências de trabalho: Não informado\n- Objetivos profissionais: Não informado\n- Links (GitHub, LinkedIn, Portfolio): Não informado\n- Publicações: Não informado\n- Palestras: Não informado\n- Participação em eventos: Não informado\n- Voluntariado: Não informado",
+    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:** Profissional da área contábil com experiência em auditoria, planejamento tributário e contabilidade financeira, buscando contribuir com minha habilidade analítica e expertise em sistemas contábeis para otimização de processos e tomada de decisões estratégicas.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Analista Contábil | Contábil Solutions**\n\t+ Período: Jan 2022 - Presente\n\t+ Local: Rio de Janeiro, RJ\n\t+ Responsabilidades:\n\t\t- Elaboração e análise de balancetes, demonstrações financeiras (DRE, Balanço Patrimonial, etc.) e relatórios contábeis\n\t\t- Apoio na auditoria interna, revisão e controle de documentos fiscais e contábeis\n\t\t- Apuração de impostos (IRPJ, CSLL, PIS, COFINS, ICMS, IPI) e gestão do cumprimento das obrigações acessórias\n\t\t- Participação na implementação e otimização de processos de controle de custos e despesas\n\t\t- Preparação e envio de declarações fiscais para órgãos governamentais (SPED, DCTF, ECF)\n* **Assistente de Contabilidade | MFS Contadores Associados**\n\t+ Período: Jul 2020 - Dez 2021\n\t+ Local: Rio de Janeiro, RJ\n\t+ Responsabilidades:\n\t\t- Auxílio no fechamento contábil mensal, com lançamento de contas a pagar e a receber, conciliações bancárias e de contas patrimoniais\n\t\t- Elaboração de relatórios de análises financeiras e apoio na revisão de documentos fiscais\n\t\t- Realização de controles de fluxo de caixa e de contas correntes\n\t\t- Suporte na apuração de tributos e contribuições federais, estaduais e municipais\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Bacharel em Ciências Contábeis**\n\t+ Instituição: Universidade do Estado do Rio de Janeiro (UERJ)\n\t+ Período: 2017 - 2021\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:** Contabilidade, Auditoria, Planejamento Tributário, Análise Financeira\n* **Soft Skills:** Habilidade analítica, expertise em sistemas contábeis\n\n**CERTIFICAÇÕES:** Nenhuma mencionada\n\n**IDIOMAS:** Nenhum idioma mencionado além do português\n\n**PROJETOS:** Nenhum projeto mencionado\n\n**CONQUISTAS E REALIZAÇÕES:** Nenhuma conquista ou realização mencionada\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Rio de Janeiro, RJ\n* **Preferências de trabalho:** Não mencionada\n* **Objetivos profissionais:** Contribuir com habilidade analítica e expertise em sistemas contábeis para otimização de processos e tomada de decisões estratégicas\n* **Links:** LinkedIn (linkedin.com/in/mariafernandaoliveira)\n* **Publicações:** Nenhuma mencionada\n* **Palestras:** Nenhuma mencionada\n* **Participação em eventos:** Nenhuma mencionada\n* **Voluntariado:** Nenhum mencionado\n\n--- Próxima Seção ---\n\nAqui está a análise do texto de currículo com todas as informações possíveis:\n\n**NOME_CANDIDATO:** Não fornecido\n\n**RESUMO PROFISSIONAL:** Não fornecido\n\n**EXPERIÊNCIA PROFISSIONAL:** Não fornecido\n\n**FORMAÇÃO ACADÊMICA:** Não fornecido\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Sistemas Contábeis: Protheus, Totvs, Sage, ERP SAP\n\t+ Softwares: Excel Avançado, Power BI, Contmatic\n\t+ Contabilidade e Tributação: Planejamento Tributário, Apuração de Impostos, Escrituração Fiscal, DCTF, ECF, SPED\n\t+ Contabilidade Gerencial: Análise de Custos, Fluxo de Caixa, Demonstrações Financeiras\n\t+ Auditoria e Compliance: Auditoria Interna, Contabilidade de Custos\n\t+ Outros: Legislação Fiscal, Contabilidade Internacional (IFRS)\n* **Soft Skills:** Não fornecido\n* **Nível de proficiência:** Não fornecido\n\n**CERTIFICAÇÕES:**\n\n* **Certificação em Contabilidade Tributária**\n\t+ Instituição: CFC (Conselho Federal de Contabilidade)\n\t+ Data/Validade: 2022\n* **Curso de Planejamento Tributário**\n\t+ Instituição: FGV\n\t+ Data/Validade: 2021\n* **Certificação em Auditoria Interna**\n\t+ Instituição: IBGC (Instituto Brasileiro de Governança Corporativa)\n\t+ Data/Validade: 2020\n\n**IDIOMAS:**\n\n* **Português:** Nativo\n* **Inglês:** Intermediário (leitura, escrita e conversação)\n\n**PROJETOS:**\n\n* **Consultoria de Planejamento Tributário para Pequenos Negócios**\n\t+ Descrição: Auxílio a pequenas empresas na organização fiscal e tributária, promovendo economia tributária e evitando erros em declarações fiscais.\n\t+ Tecnologias: Não fornecido\n\t+ Resultados: Não fornecido\n* **Gestão de Fluxo de Caixa para Startups**\n\t+ Descrição: Consultoria financeira e contábil para startups locais, auxiliando na projeção de fluxo de caixa e análise de viabilidade financeira.\n\t+ Tecnologias: Não fornecido\n\t+ Resultados: Não fornecido\n\n**CONQUISTAS E REALIZAÇÕES:** Não fornecido\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não fornecido\n* **Localização:** Não fornecido\n* **Preferências de trabalho:** Não fornecido\n* **Objetivos profissionais:** Não fornecido\n* **Links (GitHub, LinkedIn, Portfolio):** Não fornecido\n* **Publicações:** Não fornecido\n* **Palestras:** Não fornecido\n* **Participação em eventos:** Não fornecido\n* **Voluntariado:** Não fornecido",
     "nomeArquivo": "MARIA-FERNANDA-CURRICULO",
     "categorias": {
       "areaPrincipal": "Contabilidade",
       "areasSecundarias": [
+        "Administrativo",
         "Auditoria",
-        "Finanças",
         "Tributação"
       ],
       "palavrasChave": [
-        "Contabilidade Financeira",
+        "Análise Financeira",
         "Planejamento Tributário",
+        "Contabilidade Financeira",
         "Auditoria Interna",
         "Sistemas Contábeis"
       ],
       "nivel": "pleno",
       "categoriasEspecificas": [
         "Contabilidade Fiscal",
-        "Auditoria e Compliance"
+        "Análise de Custos",
+        "Fluxo de Caixa",
+        "Demonstrações Financeiras"
       ]
     },
-    "dataCriacao": "2025-03-19T22:57:41.436Z",
-    "ultimaAtualizacao": "2025-03-19T22:57:41.436Z"
+    "dataCriacao": "2025-03-19T23:36:59.729Z",
+    "ultimaAtualizacao": "2025-03-19T23:36:59.729Z"
+  },
+  "GILSON-SANTOS-CURRICULO": {
+    "nome": "** João da Silva",
+    "conteudo": "Aqui está a análise do currículo com todas as informações possíveis:\n\n**\n**RESUMO PROFISSIONAL:**\nDesenvolvedor de Software com foco em front-end e back-end, buscando contribuir com habilidades em desenvolvimento de aplicações, boas práticas de código e aprendizado contínuo em tecnologias emergentes.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Empresa:** Tech Solutions\n* **Cargo:** Desenvolvedor Full Stack\n* **Período:** Jan 2023 - Presente\n* **Responsabilidades:**\n\t+ Desenvolvimento e manutenção de aplicações web utilizando React.js, Node.js e MongoDB.\n\t+ Implementação de APIs RESTful para comunicação entre front-end e back-end.\n\t+ Adoção de metodologias ágeis (Scrum) para entrega de funcionalidades em ciclos de duas semanas.\n\t+ Colaboração com a equipe de design para aprimoramento da experiência do usuário.\n\t+ Realização de testes unitários e integração utilizando Jest e Mocha.\n* **Projetos:** Não mencionados\n* **Conquistas:** Não mencionadas\n* **Tecnologias utilizadas:** React.js, Node.js, MongoDB, Jest, Mocha\n\n* **Empresa:** CodeFactory\n* **Cargo:** Estagiário de Desenvolvimento\n* **Período:** Jun 2021 - Dez 2022\n* **Responsabilidades:**\n\t+ Auxílio no desenvolvimento de funcionalidades para plataformas internas utilizando Angular e Java Spring.\n\t+ Participação na criação de novos módulos para integração com APIs externas.\n\t+ Análise de requisitos e sugestões de melhorias de desempenho em sistemas existentes.\n\t+ Criação de relatórios e documentação técnica de sistemas.\n* **Projetos:** Não mencionados\n* **Conquistas:** Não mencionadas\n* **Tecnologias utilizadas:** Angular, Java Spring\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Curso:** Bacharel em Ciência da Computação\n* **Instituição:** Universidade de São Paulo (USP)\n* **Período:** 2019 - 2023\n* **Trabalhos relevantes:** Não mencionados\n* **Média/Notas:** Não mencionadas\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Desenvolvimento web full stack\n\t+ React.js\n\t+ Redux\n\t+ Node.js\n\t+ MongoDB\n\t+ Angular\n\t+ Java Spring\n\t+ Jest\n\t+ Mocha\n* **Soft Skills:** Não mencionadas\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:**\n\n* **Nome:** Certificação em Desenvolvimento Web Full Stack\n* **Instituição:** Udemy\n* **Data/Validade:** 2022\n* **Código/ID:** Não mencionado\n* **Nome:** Certificação em React.js e Redux\n* **Instituição:** Alura\n* **Data/Validade:** 2022\n* **Código/ID:** Não mencionado\n* **Nome:** Certificação em Programação Java\n* **Instituição:** Coursera\n* **Data/Validade:** 2021\n* **Código/ID:** Não mencionado\n\n**IDIOMAS:**\n\n* **Idioma:** Não mencionado\n* **Nível:** Não mencionado\n* **Certificações:** Não mencionadas\n\n**PROJETOS:**\n\n* Não mencionados\n\n**CONQUISTAS E REALIZAÇÕES:**\n\n* Não mencionadas\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** São Paulo, SP\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Desenvolvedor de Software com foco em front-end e back-end\n* **Links:** LinkedIn (linkedin.com/in/joaodasilva), GitHub (github.com/joaodasilva)\n* **Publicações:** Não mencionadas\n* **Palestras:** Não mencionadas\n* **Participação em eventos:** Não mencionadas\n* **Voluntariado:** Não mencionado\n\n--- Próxima Seção ---\n\nAqui está a análise do texto de currículo:\n\n**NOME_CANDIDATO:** Não informado\n\n**RESUMO PROFISSIONAL:** Não informado\n\n**EXPERIÊNCIA PROFISSIONAL:** Não informado\n\n**FORMAÇÃO ACADÊMICA:** Não informado\n\n**HABILIDADES TÉCNICAS:**\n\n* Hard Skills:\n\t+ Linguagens de Programação: JavaScript, TypeScript, Java, Python\n\t+ Frameworks e Bibliotecas: React.js, Node.js, Angular, Express.js, Spring Boot\n\t+ Banco de Dados: MongoDB, PostgreSQL, MySQL\n\t+ Ferramentas de Desenvolvimento: Git, Docker, Visual Studio Code, IntelliJ IDEA\n\t+ Metodologias Ágeis: Scrum, Kanban\n\t+ Ferramentas de Teste: Jest, Mocha, Cypress\n\t+ Outros: APIs RESTful, GitHub Actions, Nginx\n* Soft Skills: Não informado\n* Nível de proficiência: Não informado\n\n**CERTIFICAÇÕES:** Não informado\n\n**IDIOMAS:**\n\n* Português: Nativo\n* Inglês: Intermediário (leitura, escrita e conversação)\n\n**PROJETOS:**\n\n* Blog de Tecnologia\n\t+ Descrição: Criação de um blog para compartilhamento de artigos e tutoriais sobre desenvolvimento de software\n\t+ Tecnologias: React.js, Node.js\n\t+ Resultados: Implementação de funcionalidades como login de usuário, publicação de posts e comentários\n* Aplicativo de Tarefas\n\t+ Descrição: Desenvolvimento de um aplicativo de gerenciamento de tarefas\n\t+ Tecnologias: React Native, Firebase\n\t+ Resultados: Não informado\n\n**CONQUISTAS E REALIZAÇÕES:** Não informado\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* Disponibilidade: Não informado\n* Localização: Não informado\n* Preferências de trabalho: Não informado\n* Objetivos profissionais: Não informado\n* Links (GitHub, LinkedIn, Portfolio): Não informado\n* Publicações: Não informado\n* Palestras: Não informado\n* Participação em eventos: Não informado\n* Voluntariado: Não informado",
+    "nomeArquivo": "GILSON-SANTOS-CURRICULO",
+    "categorias": {
+      "areaPrincipal": "TI",
+      "areasSecundarias": [
+        "Desenvolvimento Web",
+        "Desenvolvimento de Software"
+      ],
+      "palavrasChave": [
+        "React.js",
+        "Node.js",
+        "MongoDB",
+        "Angular",
+        "Java Spring",
+        "Desenvolvimento Full Stack"
+      ],
+      "nivel": "junior/pleno",
+      "categoriasEspecificas": [
+        "Desenvolvimento Web Full Stack",
+        "Desenvolvimento de Aplicativos"
+      ]
+    },
+    "dataCriacao": "2025-03-19T23:37:37.555Z",
+    "ultimaAtualizacao": "2025-03-19T23:37:37.555Z"
+  },
+  "luiz-carlos-pereira-curriculo": {
+    "nome": "** Luiz Carlos Pereira",
+    "conteudo": "Aqui está a análise do currículo de Luiz Carlos Pereira:\n\n**\n**RESUMO PROFISSIONAL:** Desenvolvedor de Software apaixonado por criar soluções escaláveis e eficientes, com experiência em desenvolvimento web e mobile.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n* **Desenvolvedor Full Stack | DevTech Solutions**\n\t+ Período: Jan 2023 - Presente\n\t+ Localização: São Paulo, SP\n\t+ Responsabilidades:\n\t\t- Desenvolvimento de aplicações web e mobile com React.js, Node.js, Express.js, e React Native.\n\t\t- Criação de APIs RESTful e GraphQL para integração de sistemas e troca de dados entre front-end e back-end.\n\t\t- Gerenciamento de bancos de dados relacionais (PostgreSQL) e não relacionais (MongoDB).\n\t\t- Implementação de autenticação e autorização de usuários com JWT.\n\t\t- Utilização de ferramentas de CI/CD (GitLab CI, Jenkins) para automação de builds e deploys.\n* **Estagiário de Desenvolvimento de Software | CodeForge**\n\t+ Período: Ago 2021 - Dez 2022\n\t+ Localização: São Paulo, SP\n\t+ Responsabilidades:\n\t\t- Apoio no desenvolvimento de sistemas internos usando Angular e Spring Boot.\n\t\t- Desenvolvimento de novas funcionalidades e manutenção de sistemas já existentes.\n\t\t- Colaboração na criação de testes unitários com JUnit e testes de integração com Selenium.\n\t\t- Participação no planejamento de sprints utilizando metodologias ágeis (Scrum).\n\n**FORMAÇÃO ACADÊMICA:**\n\n* **Bacharel em Sistemas de Informação**\n\t+ Instituição: Universidade de São Paulo (USP)\n\t+ Período: 2019 - 2023\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ React.js\n\t+ Node.js\n\t+ Express.js\n\t+ React Native\n\t+ Angular\n\t+ Spring Boot\n\t+ PostgreSQL\n\t+ MongoDB\n\t+ GraphQL\n\t+ JWT\n\t+ GitLab CI\n\t+ Jenkins\n\t+ JUnit\n\t+ Selenium\n* **Soft Skills:**\n\t+ Trabalho em equipe\n\t+ Comunicação eficaz\n\t+ Resolução de problemas\n\t+ Planejamento de sprints\n\n**CERTIFICAÇÕES:** Nenhuma mencionada.\n\n**IDIOMAS:**\n\n* **Português:** Nativo\n* **Inglês:** Nível não especificado, mas presumivelmente intermediário ou avançado, dado o contexto de desenvolvimento de software.\n\n**PROJETOS:** Nenhum mencionado.\n\n**CONQUISTAS E REALIZAÇÕES:** Nenhuma mencionada.\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Nenhuma mencionada.\n* **Localização:** São Paulo, SP\n* **Preferências de trabalho:** Nenhuma mencionada.\n* **Objetivos profissionais:** Contribuir para o sucesso da empresa e resolver desafios técnicos.\n* **Links:** LinkedIn (linkedin.com/in/luizcarlosdev), GitHub (github.com/luizcarlosdev)\n* **Publicações:** Nenhuma mencionada.\n* **Palestras:** Nenhuma mencionada.\n* **Participação em eventos:** Nenhuma mencionada.\n* **Voluntariado:** Nenhuma mencionada.\n\n--- Próxima Seção ---\n\nAqui está a análise do texto de currículo com todas as informações possíveis:\n\n**NOME_CANDIDATO:** Não mencionado\n\n**RESUMO PROFISSIONAL:** Não mencionado\n\n**EXPERIÊNCIA PROFISSIONAL:** Não mencionado\n\n**FORMAÇÃO ACADÊMICA:** Não mencionado\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Linguagens de Programação: JavaScript, TypeScript, Java, Python, SQL\n\t+ Frameworks e Bibliotecas: React.js, React Native, Node.js, Express.js, Angular, Spring Boot\n\t+ Banco de Dados: MongoDB, PostgreSQL, MySQL\n\t+ Ferramentas de Desenvolvimento: Git, GitHub, Docker, Kubernetes, Visual Studio Code, IntelliJ IDEA\n\t+ Metodologias Ágeis: Scrum, Kanban\n\t+ Ferramentas de Teste: Jest, Mocha, JUnit, Selenium\n\t+ Cloud: AWS (EC2, S3), Firebase\n\t+ Outros: APIs RESTful, GraphQL, CI/CD, Docker Compose\n* **Soft Skills:** Não mencionado\n* **Nível de proficiência:** Não mencionado\n\n**CERTIFICAÇÕES:**\n\n* **Certificação em Desenvolvimento Web Full Stack**: Udemy, 2022\n* **Certificação em React Native**: Alura, 2022\n* **Certificação em JavaScript Avançado**: Coursera, 2021\n* **Certificação em Docker e Kubernetes**: Udacity, 2021\n\n**IDIOMAS:**\n\n* **Português**: Nativo\n* **Inglês**: Avançado (leitura, escrita e conversação)\n\n**PROJETOS:**\n\n* **Aplicativo de Gestão de Tarefas (ToDoApp)**\n\t+ Descrição: Desenvolvimento de um aplicativo para gerenciamento de tarefas utilizando React Native para dispositivos móveis e Node.js no back-end.\n\t+ Tecnologias: React Native, Node.js, Firebase Authentication, Firestore\n\t+ Resultados: Não mencionado\n* **Plataforma de E-commerce para Pequenos Negócios**\n\t+ Descrição: Criação de uma plataforma de e-commerce personalizada para pequenos empreendedores utilizando React.js no front-end e Node.js/Express.js no back-end.\n\t+ Tecnologias: React.js, Node.js, Express.js, Firebase\n\t+ Resultados: Não mencionado\n\n**CONQUISTAS E REALIZAÇÕES:** Não mencionado\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionado\n* **Localização:** Não mencionado\n* **Preferências de trabalho:** Não mencionado\n* **Objetivos profissionais:** Não mencionado\n* **Links:** Não mencionado\n* **Publicações:** Não mencionado\n* **Palestras:** Não mencionado\n* **Participação em eventos:** Não mencionado\n* **Voluntariado:** Não mencionado",
+    "nomeArquivo": "luiz-carlos-pereira-curriculo",
+    "categorias": {
+      "areaPrincipal": "TI",
+      "areasSecundarias": [
+        "Desenvolvimento Web",
+        "Desenvolvimento Mobile"
+      ],
+      "palavrasChave": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "GraphQL",
+        "JWT",
+        "CI/CD"
+      ],
+      "nivel": "pleno",
+      "categoriasEspecificas": [
+        "Desenvolvimento Full Stack",
+        "Desenvolvimento Web",
+        "Desenvolvimento Mobile"
+      ]
+    },
+    "dataCriacao": "2025-03-19T23:41:55.642Z",
+    "ultimaAtualizacao": "2025-03-19T23:41:55.642Z"
   }
 }

@@ -334,18 +334,22 @@ function gerenciarHistorico(novaMsg) {
     conversationHistory.push(novaMsg);
 }
 
-// Função para carregar todos os contextos como um único texto
+// Corrigir a função para carregar todos os contextos como um único texto
 function carregarTodosContextosParaChat() {
     try {
         const contextos = carregarTodosContextos();
+        if (Object.keys(contextos).length === 0) {
+            return 'Nenhum currículo carregado.';
+        }
+
         // Combinar todos os contextos em um texto estruturado
         const contextoCombinado = Object.entries(contextos).map(([id, dados]) => {
-            const nome = dados.nome || id;
+            const nome = dados.nome || `Candidato sem nome (${id})`; // Fallback para currículos sem nome
             const conteudo = dados.conteudo || '';
             return `CURRÍCULO DE: ${nome}\n\n${conteudo}`;
         }).join('\n\n=== PRÓXIMO CURRÍCULO ===\n\n');
-        
-        return contextoCombinado || 'Nenhum currículo carregado.';
+
+        return contextoCombinado;
     } catch (error) {
         console.error('Erro ao carregar contextos:', error);
         return 'Erro ao carregar contextos.';
@@ -417,27 +421,17 @@ app.post('/upload-pdf', upload.array('pdfs', 10), async (req, res) => {
 app.get('/curriculos', (req, res) => {
     try {
         const contextos = carregarTodosContextos();
-        console.log('Contextos brutos:', contextos); // Debug log
-
-        const curriculos = Object.entries(contextos).map(([id, dados]) => {
-            // Check if dados is a string or object
-            const conteudo = typeof dados === 'object' ? dados.conteudo : dados;
-            const nome = typeof dados === 'object' ? dados.nome : id;
-            const categorias = typeof dados === 'object' ? dados.categorias : null;
-
+        const curriculos = Object.keys(contextos).map(id => {
+            const dados = contextos[id];
             return {
                 id: id,
-                nome: nome,
-                resumo: typeof conteudo === 'string' ? conteudo.substring(0, 200) + '...' : 'Sem resumo',
-                categorias: categorias || {
-                    areaPrincipal: 'Não categorizado',
-                    areasSecundarias: [],
-                    palavrasChave: []
-                }
+                nome: dados.nome || id, // Usa o nome armazenado ou o ID como fallback
+                resumo: dados.conteudo.substring(0, 200) + '...',
+                dataCriacao: dados.dataCriacao
             };
         });
-
-        console.log('Currículos processados:', curriculos); // Debug log
+        
+        console.log('Currículos disponíveis:', curriculos); // Debug
         res.json({ curriculos });
     } catch (error) {
         console.error('Erro ao listar currículos:', error);
@@ -584,31 +578,6 @@ app.post('/comparar-curriculos', async (req, res) => {
     }
 });
 
-// Nova rota para listar currículos disponíveis
-app.get('/curriculos', (req, res) => {
-    try {
-        const contextos = carregarTodosContextos();
-        const curriculos = Object.keys(contextos).map(id => {
-            const dados = contextos[id];
-            return {
-                id: id,
-                nome: dados.nome || id, // Usa o nome armazenado ou o ID como fallback
-                resumo: dados.conteudo.substring(0, 200) + '...',
-                dataCriacao: dados.dataCriacao
-            };
-        });
-        
-        console.log('Currículos disponíveis:', curriculos); // Debug
-        res.json({ curriculos });
-    } catch (error) {
-        console.error('Erro ao listar currículos:', error);
-        res.status(500).json({
-            error: 'Erro ao listar currículos.',
-            details: error.message
-        });
-    }
-});
-
 // Adicionar nova rota para deletar currículo
 app.delete('/curriculo/:id', (req, res) => {
     try {
@@ -632,7 +601,7 @@ app.delete('/curriculo/:id', (req, res) => {
     }
 });
 
-// Atualiza a rota do chat para usar o novo contexto
+// Atualiza a rota do chat para alinhar com a lógica de comparar.html
 app.post('/chat', async (req, res) => {
     const { mensagem } = req.body;
 
@@ -641,11 +610,20 @@ app.post('/chat', async (req, res) => {
     }
 
     try {
-        // Carrega todos os contextos disponíveis
         const contextoAtual = carregarTodosContextosParaChat();
-        
-        // Adiciona mensagem do usuário ao histórico
-        gerenciarHistorico({ role: 'user', content: mensagem });
+        console.log('Contexto carregado:', contextoAtual);
+
+        // Limitar o tamanho do contexto e da mensagem para evitar exceder o limite de tokens
+        const maxContextoTokens = 3000; // Ajustar para manter margem de segurança
+        const maxMensagemTokens = 1000;
+
+        const contextoTruncado = contextoAtual.length > maxContextoTokens 
+            ? contextoAtual.substring(0, maxContextoTokens) + '... [Contexto truncado]' 
+            : contextoAtual;
+
+        const mensagemTruncada = mensagem.length > maxMensagemTokens 
+            ? mensagem.substring(0, maxMensagemTokens) + '... [Mensagem truncada]' 
+            : mensagem;
 
         const prompt = `
         Você é um assistente especializado em análise de currículos.
@@ -653,35 +631,32 @@ app.post('/chat', async (req, res) => {
         Quando perguntar sobre nomes, use exatamente os nomes conforme aparecem após "CURRÍCULO DE:".
 
         CONTEXTO DOS CURRÍCULOS:
-        ${contextoAtual}
+        ${contextoTruncado}
 
         PERGUNTA DO USUÁRIO:
-        ${mensagem}
+        ${mensagemTruncada}
         `;
+
+        console.log('Prompt enviado para a API:', prompt);
 
         const chatCompletion = await client.chat.completions.create({
             messages: [
                 { 
                     role: 'system', 
-                    content: 'Você é um assistente especializado em análise de currículos. Use o contexto fornecido para respostas precisas.'
+                    content: 'Você é um especialista em análise de currículos. Responda de forma clara e objetiva.'
                 },
                 { role: 'user', content: prompt }
             ],
             model: 'llama3-70b-8192',
             temperature: 0.7,
-            max_tokens: 2048,
-            stream: false
+            max_tokens: 2048
         });
 
-        const resposta = chatCompletion.choices[0].message.content;
-        
-        // Adiciona resposta ao histórico
-        gerenciarHistorico({ role: 'assistant', content: resposta });
+        const resposta = chatCompletion.choices[0]?.message?.content || 'Erro: Nenhuma resposta recebida da API.';
 
         res.json({ resposta });
-
     } catch (error) {
-        console.error('Erro ao obter resposta da Groq:', error);
+        console.error('Erro ao obter resposta da API:', error);
         res.status(500).json({
             error: 'Erro ao processar sua mensagem.',
             details: error.message
@@ -920,6 +895,23 @@ app.get('/curriculos/filtrar', (req, res) => {
     } catch (error) {
         console.error('Erro ao filtrar currículos:', error);
         res.status(500).json({ error: 'Erro ao filtrar currículos.' });
+    }
+});
+
+// Rota para testar a conexão com a API
+app.get('/test-api', async (req, res) => {
+    try {
+        const resposta = await client.chat.completions.create({
+            messages: [{ role: 'user', content: 'Teste de conexão com a API.' }],
+            model: 'llama3-70b-8192',
+            temperature: 0.7,
+            max_tokens: 50
+        });
+
+        res.json({ sucesso: true, resposta: resposta.choices[0].message.content });
+    } catch (error) {
+        console.error('Erro ao testar a API:', error);
+        res.status(500).json({ sucesso: false, erro: error.message });
     }
 });
 

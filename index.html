@@ -388,6 +388,8 @@
             mensagemInput.value = '';
 
             try {
+                console.log('Enviando mensagem para o servidor:', mensagem);
+
                 const resposta = await fetch('/chat', {
                     method: 'POST',
                     headers: {
@@ -397,6 +399,8 @@
                 });
 
                 const data = await resposta.json();
+                console.log('Resposta recebida do servidor:', data);
+
                 if (data.resposta) {
                     adicionarMensagem('Assistente', data.resposta, 'bot');
                 } else {
