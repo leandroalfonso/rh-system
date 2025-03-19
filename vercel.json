@@ -8,6 +8,30 @@
   ],
   "routes": [
     {
+      "src": "/upload",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/comparar",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/contexto",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/landing",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/login",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/",
+      "dest": "/index.js"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.js"
     }
