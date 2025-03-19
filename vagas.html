@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Vagas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-color: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            padding: 2rem 0;
+        }
+
+        .container { max-width: 1000px; }
+
+        .vaga-container {
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-control, textarea {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary) !important;
+            border-radius: 8px;
+            padding: 0.75rem;
+        }
+
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+
+        select.form-control option {
+            background-color: var(--bg-primary);
+            color: var (--text-primary);
+        }
+
+        .form-control:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .vaga-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .delete-btn {
+            color: #ef4444;
+            background: transparent;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            color: #dc2626;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="vaga-container">
+            <h2 class="mb-4">Cadastrar Nova Vaga</h2>
+            <form id="vagaForm">
+                <div class="mb-3">
+                    <label class="form-label">Título da Vaga</label>
+                    <input type="text" class="form-control" id="titulo" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Descrição</label>
+                    <textarea class="form-control" id="descricao" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Requisitos</label>
+                    <textarea class="form-control" id="requisitos" rows="4" required></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Nível</label>
+                        <select class="form-control" id="nivel" required>
+                            <option value="junior">Júnior</option>
+                            <option value="pleno">Pleno</option>
+                            <option value="senior">Sênior</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Tipo</label>
+                        <select class="form-control" id="tipo" required>
+                            <option value="clt">CLT</option>
+                            <option value="pj">PJ</option>
+                            <option value="estagio">Estágio</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label class="form-label">Local</label>
+                        <input type="text" class="form-control" id="local" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus-circle me-2"></i>Cadastrar Vaga
+                </button>
+            </form>
+        </div>
+
+        <div class="vaga-container">
+            <h2 class="mb-4">Vagas Cadastradas</h2>
+            <div id="vagasList"></div>
+        </div>
+    </div>
+
+    <script>
+        // Carregar vagas existentes
+        async function carregarVagas() {
+            try {
+                const response = await fetch('/vagas');
+                const data = await response.json();
+                const vagasList = document.getElementById('vagasList');
+                
+                if (!data.vagas || data.vagas.length === 0) {
+                    vagasList.innerHTML = '<p class="text-secondary">Nenhuma vaga cadastrada.</p>';
+                    return;
+                }
+
+                vagasList.innerHTML = data.vagas.map(vaga => `
+                    <div class="vaga-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h4>${vaga.titulo}</h4>
+                                <p class="text-secondary mb-2">${vaga.nivel} · ${vaga.tipo} · ${vaga.local}</p>
+                                <p class="mb-2">${vaga.descricao}</p>
+                                <strong>Requisitos:</strong>
+                                <p class="mb-0">${vaga.requisitos}</p>
+                            </div>
+                            <button class="delete-btn" onclick="deletarVaga('${vaga.id}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Erro ao carregar vagas:', error);
+            }
+        }
+
+        // Cadastrar nova vaga
+        document.getElementById('vagaForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const vaga = {
+                titulo: document.getElementById('titulo').value,
+                descricao: document.getElementById('descricao').value,
+                requisitos: document.getElementById('requisitos').value,
+                nivel: document.getElementById('nivel').value,
+                tipo: document.getElementById('tipo').value,
+                local: document.getElementById('local').value
+            };
+
+            try {
+                const response = await fetch('/vagas', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(vaga)
+                });
+
+                if (!response.ok) throw new Error('Erro ao cadastrar vaga');
+
+                e.target.reset();
+                carregarVagas();
+                alert('Vaga cadastrada com sucesso!');
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao cadastrar vaga.');
+            }
+        });
+
+        // Deletar vaga
+        async function deletarVaga(id) {
+            if (!confirm('Tem certeza que deseja excluir esta vaga?')) return;
+
+            try {
+                const response = await fetch(`/vaga/${id}`, { method: 'DELETE' });
+                if (!response.ok) throw new Error('Erro ao deletar vaga');
+                carregarVagas();
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao deletar vaga.');
+            }
+        }
+
+        // Inicializar
+        carregarVagas();
+    </script>
+</body>
+</html>

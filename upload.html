@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload de PDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-color: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .processing-message {
+            color: #60a5fa;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .processing-message::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #60a5fa;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .upload-container {
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .upload-area:hover,
+        .upload-area.dragover {
+            border-color: var(--accent-color);
+            background-color: rgba(139, 92, 246, 0.05);
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .upload-text {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .upload-subtext {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        #file-input {
+            display: none;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn:disabled {
+            background-color: var(--text-secondary);
+            cursor: not-allowed;
+        }
+
+        .file-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .file-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .file-size {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .progress {
+            height: 8px;
+            background-color: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .result-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: none;
+        }
+
+        .success-message {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        .error-message {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+
+        input, textarea, select {
+            color: var(--text-primary) !important;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: var(--text-secondary) !important;
+        }
+
+        select option {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="upload-container">
+            <h1>Upload de PDF para Contexto</h1>
+
+            <div class="upload-area" id="drop-area">
+                <i class="fas fa-file-pdf upload-icon"></i>
+                <div class="upload-text">Arraste e solte seus arquivos PDF aqui</div>
+                <div class="upload-subtext">ou clique para selecionar arquivos (máximo 10)</div>
+                <input type="file" id="file-input" accept=".pdf" multiple />
+            </div>
+
+            <div class="file-info" id="file-info">
+                <div class="file-name" id="file-name"></div>
+                <div class="file-size" id="file-size"></div>
+            </div>
+
+            <div class="progress-container" id="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <button class="btn" id="upload-btn" disabled>Processar PDF</button>
+
+            <div class="result-container" id="result-container">
+                <div id="result-message"></div>
+            </div>
+
+            <div class="nav-links">
+                <a href="/" class="nav-link"><i class="fas fa-comment"></i> Ir para o Chat</a>
+                <a href="/contexto" class="nav-link"><i class="fas fa-cog"></i> Configurar Contexto</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dropArea = document.getElementById('drop-area');
+        const fileInput = document.getElementById('file-input');
+        const fileInfo = document.getElementById('file-info');
+        const fileName = document.getElementById('file-name');
+        const fileSize = document.getElementById('file-size');
+        const uploadBtn = document.getElementById('upload-btn');
+        const progressContainer = document.getElementById('progress-container');
+        const progressBar = document.getElementById('progress-bar');
+        const resultContainer = document.getElementById('result-container');
+        const resultMessage = document.getElementById('result-message');
+
+        let selectedFiles = [];
+
+        // Evento de clique na área de upload
+        dropArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // Eventos de arrastar e soltar
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropArea.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropArea.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight() {
+            dropArea.classList.add('dragover');
+        }
+
+        function unhighlight() {
+            dropArea.classList.remove('dragover');
+        }
+
+        // Manipular arquivo solto
+        dropArea.addEventListener('drop', handleDrop, false);
+
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }
+
+        // Manipular seleção de arquivo via input
+        fileInput.addEventListener('change', function () {
+            handleFiles(this.files);
+        });
+
+        function handleFiles(files) {
+            if (files.length > 10) {
+                showResult('Máximo de 10 arquivos permitidos.', false);
+                return;
+            }
+
+            const validFiles = Array.from(files).filter(file => {
+                if (file.type !== 'application/pdf') {
+                    showResult(`${file.name} não é um PDF.`, false);
+                    return false;
+                }
+                if (file.size > 10 * 1024 * 1024) {
+                    showResult(`${file.name} é muito grande. Máximo 10MB.`, false);
+                    return false;
+                }
+                return true;
+            });
+
+            if (validFiles.length > 0) {
+                selectedFiles = validFiles;
+                displayFileInfo(validFiles);
+                uploadBtn.disabled = false;
+                resultContainer.style.display = 'none';
+            }
+        }
+
+        function displayFileInfo(files) {
+            fileInfo.style.display = 'block';
+            fileName.innerHTML = files.map(f => `<div>${f.name} (${formatFileSize(f.size)})</div>`).join('');
+        }
+
+        function formatFileSize(bytes) {
+            if (bytes < 1024) return bytes + ' bytes';
+            else if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+            else return (bytes / 1048576).toFixed(1) + ' MB';
+        }
+
+        // Evento de upload
+        uploadBtn.addEventListener('click', uploadFile);
+
+        function uploadFile() {
+            if (!selectedFiles || selectedFiles.length === 0) return;
+
+            const formData = new FormData();
+            selectedFiles.forEach(file => {
+                formData.append('pdfs', file);
+            });
+
+            // Mostrar progresso
+            progressContainer.style.display = 'block';
+            uploadBtn.disabled = true;
+            resultContainer.style.display = 'block';
+            resultMessage.innerHTML = '<span class="processing-message">Processando PDF... Isso pode levar alguns minutos para documentos grandes.</span>';
+
+            const xhr = new XMLHttpRequest();
+
+            // Monitorar progresso
+            xhr.upload.addEventListener('progress', (e) => {
+                if (e.lengthComputable) {
+                    const percentComplete = (e.loaded / e.total) * 100;
+                    progressBar.style.width = percentComplete + '%';
+                }
+            });
+
+            // Configurar resposta
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        // Show success message briefly before redirecting
+                        showResult('PDF processado com sucesso! Redirecionando...', true);
+                        // Redirect to comparar page after a short delay
+                        setTimeout(() => {
+                            window.location.href = '/comparar';
+                        }, 1500);
+                    } else {
+                        let errorMsg = 'Erro ao processar o PDF.';
+                        try {
+                            const response = JSON.parse(xhr.responseText);
+                            if (response.error) {
+                                errorMsg = response.error;
+                            }
+                        } catch (e) { }
+                        showResult(errorMsg, false);
+                        uploadBtn.disabled = false;
+                    }
+                }
+            };
+
+            // Enviar requisição
+            xhr.open('POST', '/upload-pdf', true);
+            xhr.send(formData);
+        }
+
+        function showResult(message, isSuccess) {
+            resultContainer.style.display = 'block';
+            resultMessage.textContent = message;
+            resultMessage.className = isSuccess ? 'success-message' : 'error-message';
+        }
+    </script>
+</body>
+
+</html>

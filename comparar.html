@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Currículos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-color: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 2rem 0;
+        }
+    
+        .container {
+            max-width: 1200px;
+            padding: 20px;
+        }
+    
+        textarea {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            border-radius: 8px;
+            padding: 12px;
+        }
+    
+        .comparison-container {
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+    
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+    
+        .form-control {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary) !important;
+            border-radius: 8px;
+            padding: 12px;
+        }
+    
+        .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+    
+        select.form-control option {
+            background-color: var(--bg-primary);
+            color: var (--text-primary);
+        }
+    
+        .form-control:focus {
+            background-color: var(--bg-primary);
+            border-color: var(--accent-color);
+            color: var(--text-primary);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+    
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+    
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+    
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+        }
+    
+        .card-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    
+        .form-check {
+            margin-top: auto;
+        }
+    
+        .form-check-input {
+            background-color: var(--bg-primary);
+            border-color: var(--border-color);
+        }
+    
+        .form-check-input:checked {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+    
+        .form-check-label {
+            color: var(--text-secondary);
+        }
+    
+        .btn-primary {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+    
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+    
+        .btn-primary:disabled {
+            background-color: var(--text-secondary);
+            opacity: 0.5;
+        }
+    
+        #resultado {
+            background-color: var(--bg-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border-color);
+        }
+    
+        .analysis-content {
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+    
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+    
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s ease;
+        }
+    
+        .nav-link:hover {
+            color: var(--accent-color);
+        }
+    
+        label {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+    
+        .candidato-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+    
+        .candidato-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+    
+        .candidato-icone {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+    
+        .modal-content {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+    
+        .modal-header {
+            border-bottom-color: var(--border-color);
+        }
+    
+        .modal-footer {
+            border-top-color: var(--border-color);
+        }
+    
+        .badge {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5em 1em;
+            border-radius: 20px;
+            margin: 0.2em;
+            display: inline-block;
+            font-size: 0.85rem;
+            white-space: normal;
+            text-align: center;
+            line-height: 1.2;
+            word-break: break-word;
+            max-width: 100%;
+        }
+    
+        .habilidades-preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+    
+        .ranking-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid var(--bg-primary);
+        }
+    
+        .delete-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ef4444;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+    
+        .delete-btn:hover {
+            background: #dc2626;
+            transform: scale(1.1);
+        }
+    
+        .modal-full {
+            padding: 0 !important;
+        }
+    
+        .modal-full .modal-dialog {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            margin: 0;
+        }
+    
+        .modal-full .modal-content {
+            height: 100%;
+            border: 0;
+            border-radius: 0;
+        }
+    
+        .modal-full .modal-body {
+            overflow-y: auto;
+            padding: 2rem;
+        }
+    
+        .modal-full .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            z-index: 1050;
+        }
+    
+        .modal-full .close-modal:hover {
+            background: var(--accent-hover);
+            transform: scale(1.1);
+        }
+    
+        .curriculo-detalhes {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+    
+       <style>
+        .modal-content {
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .styled-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .styled-list li {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .styled-list li::before {
+            content: "•";
+            color: var (--accent-color);
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .habilidades-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .experiencias-list .experiencia-item {
+            border-left: 2px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .formacao-list .formacao-item {
+            padding: 1rem;
+            background-color: rgba(139, 92, 246, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="comparison-container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Comparar Currículos</h1>
+                <div class="nav-links">
+                    <a href="/" class="nav-link"><i class="fas fa-comment"></i> Chat</a>
+                    <a href="/upload" class="nav-link"><i class="fas fa-file-upload"></i> Upload</a>
+                    <a href="/contexto" class="nav-link"><i class="fas fa-cog"></i> Contexto</a>
+                </div>
+            </div>
+            
+            <div class="form-group mb-4">
+                <label>Vaga</label>
+                <select id="vaga" class="form-control mb-3">
+                    <option value="">Selecione uma vaga (opcional)</option>
+                </select>
+                
+                <label>Descrição Adicional (opcional)</label>
+                <textarea id="descricao-adicional" class="form-control" rows="4" 
+                    placeholder="Adicione informações específicas para esta análise..."></textarea>
+            </div>
+
+            <div class="form-group mb-4">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label>Filtrar por Área</label>
+                        <select id="filtroArea" class="form-control">
+                            <option value="">Todas as áreas</option>
+                            <option value="TI">Tecnologia</option>
+                            <option value="Contabilidade">Contabilidade</option>
+                            <option value="Administrativo">Administrativo</option>
+                            <option value="Manutencao">Manutenção</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Filtrar por Nível</label>
+                        <select id="filtroNivel" class="form-control">
+                            <option value="">Todos os níveis</option>
+                            <option value="junior">Júnior</option>
+                            <option value="pleno">Pleno</option>
+                            <option value="senior">Sênior</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label>Palavras-chave</label>
+                        <input type="text" id="filtroPalavras" class="form-control" placeholder="Ex: java, react">
+                    </div>
+                </div>
+                <button class="btn btn-secondary w-100 mb-4" onclick="aplicarFiltros()">
+                    <i class="fas fa-filter me-2"></i>Aplicar Filtros
+                </button>
+            </div>
+
+            <div class="curriculos-list mb-4">
+                <h3 class="mb-3">Currículos Disponíveis</h3>
+                <div id="curriculos-container" class="row g-4"></div>
+            </div>
+
+            <button id="comparar-btn" class="btn btn-primary w-100" disabled>
+                <i class="fas fa-balance-scale me-2"></i>
+                Comparar Currículos Selecionados
+            </button>
+
+            <div id="resultado" class="mt-4" style="display: none;">
+                <h3 class="mb-3">Análise Comparativa</h3>
+                <div class="analysis-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="candidatoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Detalhes do Candidato</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="candidatoDetalhes">
+                    <div class="candidate-profile">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-user-circle" style="font-size: 5rem; color: var(--accent-color);"></i>
+                            <h3 class="mt-3 candidate-name"></h3>
+                        </div>
+                        
+                        <div class="info-section mb-4">
+                            <h4 class="section-title"><i class="fas fa-star me-2"></i>Pontos Fortes</h4>
+                            <ul class="pontos-fortes-list styled-list">
+                            </ul>
+                        </div>
+
+                        <div class="info-section mb-4">
+                            <h4 class="section-title"><i class="fas fa-briefcase me-2"></i>Experiência Profissional</h4>
+                            <div class="experiencias-list">
+                            </div>
+                        </div>
+
+                        <div class="info-section mb-4">
+                            <h4 class="section-title"><i class="fas fa-tools me-2"></i>Habilidades Técnicas</h4>
+                            <div class="habilidades-container">
+                            </div>
+                        </div>
+
+                        <div class="info-section mb-4">
+                            <h4 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Formação Acadêmica</h4>
+                            <div class="formacao-list">
+                            </div>
+                        </div>
+
+                        <div class="info-section mb-4 certificacoes-section">
+                            <h4 class="section-title"><i class="fas fa-certificate me-2"></i>Certificações</h4>
+                            <ul class="certificacoes-list styled-list">
+                            </ul>
+                        </div>
+
+                        <div class="info-section mb-4 idiomas-section">
+                            <h4 class="section-title"><i class="fas fa-language me-2"></i>Idiomas</h4>
+                            <ul class="idiomas-list styled-list">
+                            </ul>
+                        </div>
+
+                        <div class="ranking-section mt-4 p-3 bg-dark rounded">
+                            <h4 class="section-title"><i class="fas fa-chart-line me-2"></i>Justificativa do Ranking</h4>
+                            <p class="ranking-justificativa mb-0"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+
+    <!-- Add new modal for curriculum details -->
+    <div class="modal fade modal-full" id="curriculoModal" tabindex="-1">
+        <button type="button" class="close-modal" data-bs-dismiss="modal">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="curriculo-detalhes" id="curriculoDetalhes">
+                        <!-- Content will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carregar currículos disponíveis
+        async function carregarCurriculos() {
+            try {
+                const response = await fetch('/curriculos');
+                const data = await response.json();
+                
+                console.log('Dados recebidos:', data);
+                
+                const container = document.getElementById('curriculos-container');
+                container.innerHTML = '';
+
+                if (!data.curriculos || data.curriculos.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12">
+                            <div class="alert alert-info">
+                                Nenhum currículo disponível. Por favor, faça o upload primeiro.
+                            </div>
+                        </div>
+                    `;
+                    return;
+                }
+
+                data.curriculos.forEach(curriculo => {
+                    const div = document.createElement('div');
+                    div.className = 'col-md-4 mb-3';
+                    div.innerHTML = `
+                        <div class="card">
+                            <div class="card-body">
+                                <button class="delete-btn" onclick="deletarCurriculo('${curriculo.id}', this)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <h5 class="card-title">${curriculo.nome || 'Sem nome'}</h5>
+                                <p class="card-text">${curriculo.resumo || 'Sem resumo disponível'}</p>
+                                <div class="categorias mb-2">
+                                    ${curriculo.categorias ? `
+                                        <span class="badge bg-primary">${curriculo.categorias.areaPrincipal || 'Não categorizado'}</span>
+                                        ${curriculo.categorias.areasSecundarias?.map(area => 
+                                            `<span class="badge bg-secondary">${area}</span>`
+                                        ).join('') || ''}
+                                    ` : '<span class="badge bg-secondary">Não categorizado</span>'}
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input curriculo-check" type="checkbox" 
+                                           value="${curriculo.id}" id="check-${curriculo.id}">
+                                    <label class="form-check-label" for="check-${curriculo.id}">
+                                        Selecionar para comparação
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+
+                document.querySelectorAll('.curriculo-check').forEach(check => {
+                    check.addEventListener('change', updateCompareButton);
+                });
+
+            } catch (error) {
+                console.error('Erro ao carregar currículos:', error);
+                const container = document.getElementById('curriculos-container');
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Erro ao carregar currículos: ${error.message}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        async function deletarCurriculo(id, element) {
+            if (!confirm('Tem certeza que deseja excluir este currículo?')) {
+                return;
+            }
+            try {
+                const response = await fetch(`/curriculo/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Erro ao deletar currículo');
+                }
+
+                // Remove o card do DOM
+                element.closest('.col-md-4').remove();
+
+                // Atualiza o botão de comparação
+                updateCompareButton();
+
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('Erro ao deletar currículo: ' + error.message);
+            }
+        }
+
+        function updateCompareButton() {
+            const selecionados = document.querySelectorAll('.curriculo-check:checked');
+            document.getElementById('comparar-btn').disabled = selecionados.length < 2;
+        }
+
+        document.getElementById('comparar-btn').addEventListener('click', async () => {
+            const selecionados = Array.from(document.querySelectorAll('.curriculo-check:checked'))
+                                    .map(check => check.value);
+            
+            console.log('Currículos selecionados:', selecionados); // Debug
+            if (selecionados.length < 2) {
+                alert('Selecione pelo menos 2 currículos para comparar.');
+                return;
+            }
+
+            const vagaId = document.getElementById('vaga').value;
+            const descricaoAdicional = document.getElementById('descricao-adicional').value;
+            const btn = document.getElementById('comparar-btn');
+            const resultado = document.getElementById('resultado');
+            try {
+                // Mostrar loading
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Analisando currículos...';
+                resultado.style.display = 'block';
+                resultado.innerHTML = `
+                    <div class="text-center">
+                        <div class="spinner-border text-primary mb-3" role="status"></div>
+                        <p>Realizando análise comparativa detalhada...</p>
+                    </div>
+                `;
+
+                const response = await fetch('/comparar-curriculos', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ curriculos: selecionados, vaga: vagaId, descricaoAdicional }),
+                });
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                if (!data.analise || !data.analise.candidatos) {
+                    throw new Error('Formato de resposta inválido');
+                }
+
+                mostrarAnalise(data);
+            } catch (error) {
+                console.error('Erro ao comparar currículos:', error);
+                resultado.innerHTML = `
+                    <div class="alert alert-danger">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        Erro ao realizar a comparação: ${error.message}
+                    </div>
+                `;
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-balance-scale me-2"></i>Comparar Currículos Selecionados';
+            }
+        });
+
+        function mostrarAnalise(data) {
+            const resultado = document.getElementById('resultado');
+            resultado.style.display = 'block';
+            try {
+                const candidatosHTML = data.analise.candidatos
+                    .sort((a, b) => a.ranking - b.ranking)
+                    .map((candidato, index) => {
+                        const isBestCandidate = index === 0;
+                        return `
+                            <div class="col-lg-4 col-md-6 mb-4">
+                                <div class="card candidato-card position-relative ${isBestCandidate ? 'best-candidate' : ''}" 
+                                     onclick="mostrarDetalhesAnalise('${encodeURIComponent(JSON.stringify(candidato))}')">
+                                    <div class="ranking-badge">#${index + 1}</div>
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-user-circle candidato-icone"></i>
+                                        <div class="card-content">
+                                            <div class="resumo-preview mb-3 text-light">
+                                                ${candidato.pontosFortesResumo || candidato.pontosFortes?.[0] || 'Sem resumo disponível'}
+                                            </div>
+                                            <div class="habilidades-preview">
+                                                ${(candidato.habilidadesTecnicas || []).slice(0, 3).map(hab => 
+                                                    `<span class="badge bg-primary">${hab}</span>`
+                                                ).join('')}
+                                                ${candidato.habilidadesTecnicas?.length > 3 ? 
+                                                    `<span class="badge bg-secondary">+${candidato.habilidadesTecnicas.length - 3}</span>` : 
+                                                    ''}
+                                            </div>
+                                        </div>
+                                        <div class="view-more mt-2">
+                                            <span class="text-primary">
+                                                ${isBestCandidate ? '<i class="fas fa-crown me-1 text-warning"></i>' : '<i class="fas fa-search-plus me-1"></i>'}
+                                                ${isBestCandidate ? 'Melhor candidato - Ver detalhes' : 'Ver detalhes'}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                resultado.innerHTML = `
+                    <h3 class="text-light">Análise Comparativa</h3>
+                    <div class="row mt-4">
+                        ${candidatosHTML}
+                    </div>
+                    <div class="analise-geral mt-4 p-4 bg-dark rounded">
+                        <h4 class="text-light">Análise Geral</h4>
+                        <p class="text-light">${data.analise.analiseComparativa || 'Análise comparativa em processamento...'}</p>
+                        <h4 class="text-light">Recomendação Final</h4>
+                        <p class="text-light">${data.analise.recomendacaoFinal || 'Recomendação em processamento...'}</p>
+                    </div>
+                `;
+
+            } catch (error) {
+                console.error('Erro ao mostrar análise:', error);
+                resultado.innerHTML = `
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-circle me-2"></i>
+                        Erro ao formatar a análise. Dados brutos:
+                        <pre class="mt-3">${JSON.stringify(data, null, 2)}</pre>
+                    </div>
+                `;
+            }
+        }
+
+        function mostrarDetalhesAnalise(candidatoData) {
+            try {
+                const candidato = JSON.parse(decodeURIComponent(candidatoData));
+                const modalEl = document.getElementById('candidatoModal');
+                const modal = new bootstrap.Modal(modalEl);
+                const detalhes = document.getElementById('candidatoDetalhes');
+                detalhes.innerHTML = `
+                    <div class="candidate-profile">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-user-circle" style="font-size: 5rem; color: var(--accent-color);"></i>
+                            <h3 class="mt-3">${candidato.nome}</h3>
+                        </div>
+                        <div class="info-section mb-4">
+                            <h4 class="section-title">
+                                <i class="fas fa-star me-2"></i>Pontos Fortes
+                            </h4>
+                            <div class="content-section">
+                                ${(candidato.pontosFortes || [])
+                                    .map(ponto => `<p>${ponto}</p>`)
+                                    .join('')}
+                            </div>
+                        </div>
+                        <div class="info-section mb-4">
+                            <h4 class="section-title">
+                                <i class="fas fa-briefcase me-2"></i>Experiência Profissional
+                            </h4>
+                            <div class="content-section">
+                                ${(candidato.experiencias || [])
+                                    .map(exp => `
+                                        <div class="experiencia-item">
+                                            <h5>${exp.cargo || ''}</h5>
+                                            <p class="empresa-periodo">
+                                                <strong>${exp.empresa || ''}</strong> - ${exp.periodo || ''}
+                                            </p>
+                                            <p class="descricao">${exp.descricao || ''}</p>
+                                        </div>
+                                    `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="info-section mb-4">
+                            <h4 class="section-title">
+                                <i class="fas fa-tools me-2"></i>Habilidades Técnicas
+                            </h4>
+                            <div class="habilidades-container">
+                                ${(candidato.habilidadesTecnicas || [])
+                                    .map(hab => `<span class="badge">${hab}</span>`)
+                                    .join('')}
+                            </div>
+                        </div>
+
+                        <div class="info-section mb-4">
+                            <h4 class="section-title">
+                                <i class="fas fa-graduation-cap me-2"></i>Formação Acadêmica
+                            </h4>
+                            ${(candidato.formacaoAcademica || [])
+                                .map(form => `
+                                    <div class="formacao-item">
+                                        <h5>${form.curso || ''}</h5>
+                                        <p>${form.instituicao || ''} - ${form.tipo || ''}</p>
+                                        <p class="periodo">${form.periodo || ''}</p>
+                                    </div>
+                                `).join('')}
+                        </div>
+
+                        ${candidato.certificacoes?.length > 0 ? `
+                            <div class="info-section mb-4">
+                                <h4 class="section-title">
+                                    <i class="fas fa-certificate me-2"></i>Certificações
+                                </h4>
+                                <ul class="certificacoes-list">
+                                    ${candidato.certificacoes.map(cert => `<li>${cert}</li>`).join('')}
+                                </ul>
+                            </div>
+                        ` : ''}
+
+                        <div class="ranking-info p-4 bg-dark rounded">
+                            <h4 class="section-title">
+                                <i class="fas fa-chart-line me-2"></i>Análise de Ranking
+                            </h4>
+                            <p class="mb-0">${candidato.justificativaRanking || 'Não disponível'}</p>
+                        </div>
+                    </div>
+                `;
+                modal.show();
+            } catch (error) {
+                console.error('Erro ao mostrar detalhes:', error);
+                alert('Erro ao exibir detalhes do candidato: ' + error.message);
+            }
+        }
+
+        // Add this function to load jobs
+        async function carregarVagas() {
+            try {
+                const response = await fetch('/vagas');
+                const data = await response.json();
+                const vagaSelect = document.getElementById('vaga');
+                
+                if (data.vagas && data.vagas.length > 0) {
+                    const options = data.vagas.map(vaga => 
+                        `<option value="${vaga.id}">${vaga.titulo} (${vaga.nivel})</option>`
+                    ).join('');
+                    vagaSelect.innerHTML += options;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar vagas:', error);
+            }
+        }
+
+        async function aplicarFiltros() {
+            const area = document.getElementById('filtroArea').value;
+            const nivel = document.getElementById('filtroNivel').value;
+            const palavrasChave = document.getElementById('filtroPalavras').value;
+            
+            try {
+                const params = new URLSearchParams();
+                if (area) params.append('area', area);
+                if (nivel) params.append('nivel', nivel);
+                if (palavrasChave) params.append('palavrasChave', palavrasChave);
+
+                console.log('Enviando filtros:', { area, nivel, palavrasChave });
+                const response = await fetch(`/curriculos/filtrar?${params}`);
+                const data = await response.json();
+                console.log('Resposta do servidor:', data);
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                atualizarListaCurriculos(data.curriculos);
+            } catch (error) {
+                console.error('Erro ao aplicar filtros:', error);
+                const container = document.getElementById('curriculos-container');
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Erro ao filtrar currículos: ${error.message}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function atualizarListaCurriculos(curriculos) {
+            const container = document.getElementById('curriculos-container');
+            const palavrasChave = document.getElementById('filtroPalavras').value
+                .split(',')
+                .map(p => p.trim().toLowerCase());
+
+            if (!curriculos || curriculos.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-info">
+                            Nenhum currículo encontrado com os filtros selecionados.
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = curriculos.map(curriculo => {
+                // Destacar matches encontrados
+                let resumo = curriculo.resumo;
+                palavrasChave.forEach(palavra => {
+                    if (palavra) {
+                        const regex = new RegExp(`(${palavra})`, 'gi');
+                        resumo = resumo.replace(regex, '<mark class="bg-warning text-dark">$1</mark>');
+                    }
+                });
+
+                return `
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <button class="delete-btn" onclick="event.stopPropagation(); deletarCurriculo('${curriculo.id}', this)">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                            <div class="card-body">
+                                <h5 class="card-title">${curriculo.nome || 'Sem nome'}</h5>
+                                <p class="card-text">${resumo}</p>
+                                <div class="categorias mb-2">
+                                    <span class="badge bg-primary">${curriculo.categorias.areaPrincipal}</span>
+                                    ${curriculo.categorias.areasSecundarias.map(area => 
+                                        `<span class="badge bg-secondary">${area}</span>`
+                                    ).join('')}
+                                </div>
+                                ${palavrasChave.length > 0 ? `
+                                    <div class="matches mb-2">
+                                        <small class="text-warning">
+                                            <i class="fas fa-search me-1"></i>
+                                            Palavras-chave encontradas
+                                        </small>
+                                    </div>
+                                ` : ''}
+                                <div class="form-check">
+                                    <input class="form-check-input curriculo-check" type="checkbox" 
+                                           value="${curriculo.id}" id="check-${curriculo.id}">
+                                    <label class="form-check-label" for="check-${curriculo.id}">
+                                        Selecionar para comparação
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Reattach event listeners
+            document.querySelectorAll('.curriculo-check').forEach(check => {
+                check.addEventListener('change', updateCompareButton);
+            });
+        }
+
+        // Add new function to handle curriculum details views
+        async function verDetalhes(id) {
+            try {
+                console.log('Carregando detalhes do currículo:', id);
+                const response = await fetch('/curriculos');
+                const contextos = await response.json();
+
+                console.log('Dados brutos recebidos:', contextos);
+                const curriculo = contextos.curriculos.find(c => c.id === id);
+                
+                if (!curriculo) {
+                    throw new Error('Currículo não encontrado');
+                }
+
+                console.log('Currículo encontrado:', curriculo);
+                const detalhes = document.getElementById('curriculoDetalhes');
+
+                // Get the content, trying different possible locations
+                let conteudoCompleto = '';
+                if (typeof curriculo.conteudo === 'string') {
+                    conteudoCompleto = curriculo.conteudo;
+                } else if (typeof curriculo.resumo === 'string') {
+                    conteudoCompleto = curriculo.resumo;
+                }
+
+                console.log('Conteúdo extraído:', conteudoCompleto);
+                const formatarTexto = (texto) => {
+                    if (!texto) return 'Conteúdo não disponível';
+                    // Remove markdown formatting and clean up the text
+                    return texto
+                        .replace(/\*\*/g, '') // Remove asterisks
+                        .split('\n')
+                        .map(linha => {
+                            linha = linha.trim();
+                            if (!linha) return '';
+
+                            // Check for section headers (all caps followed by colon)
+                            if (linha.match(/^[A-ZÇÁÉÍÓÚÂÊÎÔÛÃÕ][A-ZÇÁÉÍÓÚÂÊÎÔÛÃÕ\s]{2,}:/)) {
+                                return `<h4 class="section-header mt-4 mb-3">${linha}</h4>`;
+                            }
+
+                            // For list items
+                            if (linha.startsWith('* ')) {
+                                return `<li>${linha.substring(2)}</li>`;
+                            }
+                            if (linha.startsWith('- ')) {
+                                return `<li>${linha.substring(2)}</li>`;
+                            }
+
+                            // Regular paragraph
+                            return `<p class="mb-3">${linha}</p>`;
+                        })
+                        .join('\n');
+                };
+
+                // Structure the content
+                detalhes.innerHTML = `
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-circle" style="font-size: 4rem; color: var(--accent-color);"></i>
+                        <h2 class="mt-3 mb-4">${curriculo.nome || 'Nome não disponível'}</h2>
+                    </div>
+                    
+                    ${curriculo.categorias ? `
+                        <div class="mb-4 categoria-section">
+                            <h3 class="mb-3">Categorização</h3>
+                            <div class="mb-3">
+                                <strong>Área Principal:</strong> ${curriculo.categorias.areaPrincipal}
+                            </div>
+                            <div class="mb-3">
+                                <strong>Nível:</strong> ${curriculo.categorias.nivel}
+                            </div>
+                            <div class="mb-3">
+                                <strong>Áreas Secundárias:</strong>
+                                <div class="mt-2">
+                                    ${curriculo.categorias.areasSecundarias.map(area => 
+                                        `<span class="badge me-2 mb-2">${area}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                            <div>
+                                <strong>Palavras-chave:</strong>
+                                <div class="mt-2">
+                                    ${curriculo.categorias.palavrasChave.map(palavra => 
+                                        `<span class="badge me-2 mb-2">${palavra}</span>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="curriculum-content">
+                        <div class="content-wrapper">
+                            ${formatarTexto(conteudoCompleto)}
+                        </div>
+                    </div>
+                `;
+
+                // Add specific styles for content formatting
+                const style = document.createElement('style');
+                style.textContent = `
+                    .curriculum-content {
+                        background-color: var(--bg-primary);
+                        padding: 2rem;
+                        border-radius: 12px;
+                        border: 1px solid var(--border-color);
+                    }
+
+                    .content-wrapper {
+                        color: var(--text-primary);
+                        line-height: 1.6;
+                    }
+
+                    .section-header {
+                        color: var(--accent-color);
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+
+                    .categoria-section {
+                        background-color: var(--bg-primary);
+                        padding: 1.5rem;
+                        border-radius: 12px;
+                        border: 1px solid var(--border-color);
+                        margin-bottom: 2rem;
+                    }
+
+                    .curriculum-content ul {
+                        list-style-type: none;
+                        padding-left: 1rem;
+                    }
+
+                    .curriculum-content li {
+                        margin-bottom: 0.5rem;
+                        position: relative;
+                    }
+
+                    .curriculum-content li::before {
+                        content: "•";
+                        color: var(--accent-color);
+                        position: absolute;
+                        left: -1rem;
+                    }
+                `;
+                document.head.appendChild(style);
+
+                const modal = new bootstrap.Modal(document.getElementById('curriculoModal'));
+                modal.show();
+            } catch (error) {
+                console.error('Erro ao carregar detalhes:', error);
+                alert('Erro ao carregar detalhes do currículo: ' + error.message);
+            }
+        }
+
+        // Initialize both functions
+        carregarCurriculos();
+        carregarVagas();
+    </script>
+</body>
+</html>
+

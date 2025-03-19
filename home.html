@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Contexto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --accent-color: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        h1 {
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            resize: vertical;
+            transition: border-color 0.2s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        #mensagem {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .success {
+            background-color: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
+            color: #10b981;
+        }
+
+        .error {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            color: #ef4444;
+        }
+
+        /* Estilização da scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-color);
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-color) var(--bg-primary);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(-600px); }
+            to { opacity: 1; transform: translateX(0px); }
+        }
+
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateX(-300px); }
+            to { opacity: 0; transform: translateX(-600px); }
+        }
+
+        #alertDiv {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            
+            background-color: rgba(16, 185, 129, 0.1);
+            display: none;
+            margin: 10px 0;
+            width: fit-content;
+        }
+
+        #alertDiv.show {
+            display: block;
+            animation: fadeIn 2s ease, fadeOut 2s ease 3s;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="alertDiv"></div>
+    <div class="container">
+        <h1>Configurar Contexto do Assistente</h1>
+        
+        <form id="form">
+            <textarea id="contexto" placeholder="Digite o novo contexto aqui..."></textarea>
+            <button type="submit">
+                <i class="fas fa-save"></i>
+                Atualizar Contexto
+            </button>
+        </form>
+        <button onclick="alerta()">enviar mensagem alerta</button>
+        <div id="mensagem" style="display: none;"></div>
+    </div>
+    
+    <script>
+        const form = document.getElementById('form');
+        const contexto = document.getElementById('contexto');
+        const mensagemDiv = document.getElementById('mensagem');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const contextoValor = contexto.value.trim();
+            
+            if (!contextoValor) {
+                showMessage('O contexto não pode estar vazio', 'error');
+                return;
+            }
+
+            try {
+                const response = await fetch('/contexto', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ mensagem: contextoValor })
+                });
+
+                const data = await response.json();
+                
+                if (data.error) {
+                    showMessage(data.error, 'error');
+                } else {
+                    showMessage('Contexto atualizado com sucesso!', 'success');
+                    // Mostrar o contexto melhorado
+                    contexto.value = data.contexto || contextoValor;
+                }
+            } catch (error) {
+                showMessage('Erro ao enviar contexto: ' + error.message, 'error');
+            }
+        });
+
+        function showMessage(text, type) {
+            mensagemDiv.textContent = text;
+            mensagemDiv.className = type;
+            mensagemDiv.style.display = 'block';
+            setTimeout(() => {
+                mensagemDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        function alerta(){
+            const alertDiv = document.getElementById('alertDiv');
+            alertDiv.style.display = 'block';
+            alertDiv.classList.add('show');
+            
+            alertDiv.innerHTML = `
+                <div class="alert">
+                    <strong>Sucesso!</strong> A mensagem foi enviada com sucesso.
+                </div>
+            `;
+            setTimeout(() => {
+                alertDiv.innerHTML = '';
+                alertDiv.style.display = 'none';
+                alertDiv.classList.remove('show');
+            }, 5000);
+            
+        }
+
+
+    </script>
+</body>
+</html>

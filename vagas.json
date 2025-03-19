@@ -1,0 +1,36 @@
+{
+  "jobs": {
+    "1742395608341": {
+      "titulo": "Vaga Desenvolvedor frontEnd(ReactJs)",
+      "descricao": "Vaga para desenvolvedor jr. com especialidade em REACT, e nodejs",
+      "requisitos": [
+        "Node.js",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "React"
+      ],
+      "nivel": "junior",
+      "tipo": "clt",
+      "local": "ldoDev",
+      "ativo": true,
+      "id": "1742395608341",
+      "dataCriacao": "2024-03-19T14:46:48.341Z"
+    },
+    "1742399595884": {
+      "titulo": "Contabilidade Setor Fiscal (domínio em sistemas de contabilidade)",
+      "descricao": "vaga para contabilidade, com enfase em setor fiscal e tributário, com experiencia comprovada na area.",
+      "requisitos": [
+        "pelo menos 1 anos de experiencia",
+        "formação em contabilidade",
+        "administração."
+      ],
+      "nivel": "junior",
+      "tipo": "clt",
+      "local": "Sistem Contábil",
+      "ativo": true,
+      "id": "1742399595884",
+      "dataCriacao": "2025-03-19T15:53:15.884Z"
+    }
+  }
+}
