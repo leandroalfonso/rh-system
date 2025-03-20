@@ -338,7 +338,7 @@ function gerenciarHistorico(novaMsg) {
 function carregarTodosContextosParaChat() {
     try {
         const contextos = carregarTodosContextos();
-        if (Object.keys(contextos).length === 0) {
+        if (!contextos || Object.keys(contextos).length === 0) {
             return 'Nenhum currículo carregado.';
         }
 
@@ -349,6 +349,7 @@ function carregarTodosContextosParaChat() {
             return `CURRÍCULO DE: ${nome}\n\n${conteudo}`;
         }).join('\n\n=== PRÓXIMO CURRÍCULO ===\n\n');
 
+        console.log('Contexto combinado carregado:', contextoCombinado); // Log para depuração
         return contextoCombinado;
     } catch (error) {
         console.error('Erro ao carregar contextos:', error);
@@ -613,6 +614,10 @@ app.post('/chat', async (req, res) => {
         const contextoAtual = carregarTodosContextosParaChat();
         console.log('Contexto carregado:', contextoAtual);
 
+        if (contextoAtual === 'Nenhum currículo carregado.') {
+            return res.json({ resposta: 'Neste momento, não há currículos disponíveis para análise. Por favor, forneça os currículos dos candidatos para que eu possa ajudar.' });
+        }
+
         // Limitar o tamanho do contexto e da mensagem para evitar exceder o limite de tokens
         const maxContextoTokens = 3000; // Ajustar para manter margem de segurança
         const maxMensagemTokens = 1000;
@@ -620,7 +625,8 @@ app.post('/chat', async (req, res) => {
         // Truncar o contexto preservando múltiplos currículos
         const contextoTruncado = contextoAtual.split('\n\n=== PRÓXIMO CURRÍCULO ===\n\n')
             .reduce((acc, curr) => {
-                if (acc.length + curr.length <= maxContextoTokens) {
+                const totalLength = acc.join('\n\n=== PRÓXIMO CURRÍCULO ===\n\n').length + curr.length;
+                if (totalLength <= maxContextoTokens) {
                     acc.push(curr);
                 }
                 return acc;
