@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CurriculAI - Análise Inteligente de Currículos</title>
+    <title>CurriculoAI - Análise Inteligente de Currículos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,6 +45,19 @@
             color: var(--text-light);
             background-color: var(--bg-dark);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        .footer {
+            margin-top: auto;
+            position: relative;
+            z-index: 100;
         }
 
         .navbar {
@@ -295,309 +308,505 @@
             color: var(--primary-color);
             margin-right: 0.5rem;
         }
+
+        footer {
+            background-color: var(--bg-dark);
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light)
+        }
+        .footer-brand {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        .footer-brand i {
+            color: var(--primary-color);
+        }
+        .footer h5 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer ul li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer ul li a:hover {
+            color: var(--text-light);
+        }
+        .footer .social-links a {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            margin-right: 1rem;
+            transition: color 0.3s ease;
+        }
+        .footer .social-links a:hover {
+            color: var(--text-light);
+        }
+        .footer .text-muted {
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        .footer .text-muted i {
+            margin-right: 0.5rem;
+        }
+        .footer .text-muted a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer .text-muted a:hover {
+            color: var(--text-light);
+        }
+        .footer .text-muted p {
+            margin-bottom: 0;
+        }
+        .footer .text-muted span {
+            font-weight: 600;
+        }
+        .footer .text-muted span i {
+            color: var(--primary-color);
+        }
+        .footer .text-muted span a {
+            color: var (--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer .text-muted span a:hover {
+            color: var(--text-light);
+        }
+        .footer .text-muted {
+            color: var(--text-primary) !important;
+        }
+
+        .footer .text-muted a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer .text-muted a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer ul li a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer .social-links a {
+            color: var(--text-primary);
+            margin-right: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fas fa-file-alt"></i> CurriculAI
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#como-funciona">Como Funciona</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#beneficios">Benefícios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#pricing">Preços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#depoimentos">Depoimentos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#faq">FAQ</a>
-                    </li>
-                </ul>
-                <div class="ms-3">
-                    <a href="/login" class="btn btn-outline me-2">Login</a>
-                    <a href="/signup" class="btn btn-primary">Cadastre-se</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h1>Análise Inteligente de Currículos</h1>
-                    <p>Automatize seu processo de recrutamento com IA. Analise currículos em segundos e encontre os
-                        melhores candidatos para sua empresa.</p>
-                    <div class="hero-buttons">
-                        <a href="#pricing" class="btn btn-primary">Começar Agora</a>
-                        <a href="#demo" class="btn btn-outline">Solicitar Demo</a>
+    <main>
+        <!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <i class="fas fa-file-alt"></i> CurriculoAI
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#como-funciona">Como Funciona</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#beneficios">Benefícios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#pricing">Preços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#depoimentos">Depoimentos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">FAQ</a>
+                        </li>
+                    </ul>
+                    <div class="ms-3">
+                        <a href="/login" class="btn btn-outline me-2">Login</a>
+                        <a href="/signup" class="btn btn-primary">Cadastre-se</a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <img src="resume-analysis.jpg" alt="Análise de Currículos" class="hero-image">
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1>Análise Inteligente de Currículos</h1>
+                        <p>Automatize seu processo de recrutamento com IA. Analise currículos em segundos e encontre os
+                            melhores candidatos para sua empresa.</p>
+                        <div class="hero-buttons">
+                            <a href="#pricing" class="btn btn-primary">Começar Agora</a>
+                            <a href="#demo" class="btn btn-outline">Solicitar Demo</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img width="90%;" src="fotos/Vector-CV-PNG-Image.png" alt="Análise de Currículos" class="hero-image">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing-section">
-        <div class="container">
-            <div class="section-header text-center mb-5">
-                <h2>Planos e Preços</h2>
-                <p>Escolha o plano ideal para suas necessidades</p>
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <h2>Planos e Preços</h2>
+                    <p>Escolha o plano ideal para suas necessidades</p>
+                </div>
+                <div class="row">
+                    <!-- Plano Básico -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card">
+                            <h3>Básico</h3>
+                            <div class="price-value">R$99<span>/mês</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> 50 análises de currículos/mês</li>
+                                <li><i class="fas fa-check"></i> Análise básica de competências</li>
+                                <li><i class="fas fa-check"></i> Extração de dados principais</li>
+                                <li><i class="fas fa-check"></i> Suporte por email</li>
+                            </ul>
+                            <a href="/signup" class="btn btn-primary">Começar Agora</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano Profissional -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card popular">
+                            <span class="popular-badge">Mais Popular</span>
+                            <h3>Profissional</h3>
+                            <div class="price-value">R$199<span>/mês</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> 200 análises de currículos/mês</li>
+                                <li><i class="fas fa-check"></i> Análise avançada de competências</li>
+                                <li><i class="fas fa-check"></i> Matching com vagas</li>
+                                <li><i class="fas fa-check"></i> Suporte prioritário</li>
+                                <li><i class="fas fa-check"></i> Relatórios personalizados</li>
+                            </ul>
+                            <a href="/signup" class="btn btn-primary">Começar Agora</a>
+                        </div>
+                    </div>
+
+                    <!-- Plano Enterprise -->
+                    <div class="col-lg-4 mb-4">
+                        <div class="pricing-card">
+                            <h3>Enterprise</h3>
+                            <div class="price-value">R$499<span>/mês</span></div>
+                            <ul class="features-list">
+                                <li><i class="fas fa-check"></i> Análises ilimitadas</li>
+                                <li><i class="fas fa-check"></i> Análise avançada de competências</li>
+                                <li><i class="fas fa-check"></i> API personalizada</li>
+                                <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                                <li><i class="fas fa-check"></i> Treinamento personalizado</li>
+                                <li><i class="fas fa-check"></i> SLA garantido</li>
+                            </ul>
+                            <a href="/contact" class="btn btn-primary">Falar com Consultor</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Como Funciona Section -->
+        <section id="como-funciona" class="features py-5">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Como Funciona</h2>
+                    <p>Conheça o processo simplificado de análise de currículos com nossa tecnologia de IA</p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-upload"></i>
+                            </div>
+                            <h3>1. Upload</h3>
+                            <p>Faça upload dos currículos em formato PDF</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>2. Análise IA</h3>
+                            <p>Nossa IA analisa e extrai informações relevantes automaticamente</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>3. Resultados</h3>
+                            <p>Receba análises detalhadas e pontuações de compatibilidade</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="feature-card text-center">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>4. Decisão</h3>
+                            <p>Tome decisões informadas com base em dados concretos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefícios Section -->
+        <section id="beneficios" class="py-5" style="background-color: var(--bg-dark);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Benefícios</h2>
+                    <p>Por que escolher o CurriculoAI para seu processo de recrutamento</p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Economia de Tempo</h3>
+                            <p>Reduza o tempo de análise de currículos em até 90%, permitindo que sua equipe foque em
+                                atividades estratégicas.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Precisão</h3>
+                            <p>Nossa IA identifica os melhores candidatos com base em critérios objetivos, reduzindo
+                                vieses no processo seletivo.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Escalabilidade</h3>
+                            <p>Processe vários currículos simultaneamente, sem comprometer a qualidade
+                                da análise.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h3>Dados Estruturados</h3>
+                            <p>Transforme informações não estruturadas em dados organizados e acionáveis para sua
+                                empresa.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>Melhor Experiência</h3>
+                            <p>Ofereça um processo seletivo mais ágil e transparente, melhorando a experiência dos
+                                candidatos.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-lock"></i>
+                            </div>
+                            <h3>Segurança</h3>
+                            <p>Seus dados estão protegidos com criptografia de ponta a ponta e conformidade com LGPD.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Depoimentos Section -->
+        <section id="depoimentos" class="py-5" style="background-color: var(--secondary-color);">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Depoimentos</h2>
+                    <p>O que nossos clientes dizem sobre o CurriculoAI</p>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-lg-4 mb-4">
+                        <div class="feature-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente"
+                                        class="img-fluid">
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">Ana Silva</h4>
+                                    <p class="mb-0">Gerente de RH, TechCorp</p>
+                                </div>
+                            </div>
+                            <p>"Reduzimos nosso tempo de triagem de currículos em 85% desde que começamos a usar o
+                                CurriculoAI. A precisão da análise nos ajudou a encontrar talentos que antes passariam
+                                despercebidos."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="feature-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
+                                    <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente"
+                                        class="img-fluid">
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">Carlos Mendes</h4>
+                                    <p class="mb-0">Diretor de Talentos, FinanceGroup</p>
+                                </div>
+                            </div>
+                            <p>"A integração do CurriculoAI com nosso ATS foi perfeita. Agora conseguimos processar mais
+                                de 100 currículos por dia com uma equipe reduzida e resultados muito melhores."</p>
+                            <div class="text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="feature-card">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
+                                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente"
+                                        class="img-fluid">
+                                </div>
+                                <div>
+                                    <h4 class="mb-0">Patrícia Oliveira</h4>
+                                    <p class="mb-0">CEO, StartupInova</p>
+                                </div>
+                            </div>
+                            <p>"Como startup, precisamos ser ágeis e eficientes. O CurriculoAI nos permitiu competir por
+                                talentos com empresas muito maiores, graças à velocidade e qualidade do processo
+                                seletivo."</p>
+                                <div class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                        </div>
+                    </div>
+    </main>
+    <!-- Footer Section -->
+    <footer class="footer " style="background-color: var(--bg-card); border-top: 1px solid var(--border-color);">
+        <div class="container">
             <div class="row">
-                <!-- Plano Básico -->
                 <div class="col-lg-4 mb-4">
-                    <div class="pricing-card">
-                        <h3>Básico</h3>
-                        <div class="price-value">R$99<span>/mês</span></div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 50 análises de currículos/mês</li>
-                            <li><i class="fas fa-check"></i> Análise básica de competências</li>
-                            <li><i class="fas fa-check"></i> Extração de dados principais</li>
-                            <li><i class="fas fa-check"></i> Suporte por email</li>
-                        </ul>
-                        <a href="/signup" class="btn btn-primary">Começar Agora</a>
+                    <div class="footer-brand mb-4">
+                        <h3 class="text-light"><i class="fas fa-file-alt me-2"></i>CurriculoAI</h3>
+                    </div>
+                    <p class="text-muted">Transformando o processo de recrutamento com
+                        inteligência artificial avançada.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-3 text-muted"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="me-3 text-muted"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3 text-muted"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-
-                <!-- Plano Profissional -->
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-card popular">
-                        <span class="popular-badge">Mais Popular</span>
-                        <h3>Profissional</h3>
-                        <div class="price-value">R$199<span>/mês</span></div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> 200 análises de currículos/mês</li>
-                            <li><i class="fas fa-check"></i> Análise avançada de competências</li>
-                            <li><i class="fas fa-check"></i> Matching com vagas</li>
-                            <li><i class="fas fa-check"></i> Suporte prioritário</li>
-                            <li><i class="fas fa-check"></i> Relatórios personalizados</li>
-                        </ul>
-                        <a href="/signup" class="btn btn-primary">Começar Agora</a>
-                    </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-light mb-4">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#como-funciona" class="text-muted text-decoration-none">Como
+                                Funciona</a></li>
+                        <li class="mb-2"><a href="#beneficios" class="text-muted text-decoration-none">Benefícios</a>
+                        </li>
+                        <li class="mb-2"><a href="#pricing" class="text-muted text-decoration-none">Preços</a></li>
+                    </ul>
                 </div>
-
-                <!-- Plano Enterprise -->
-                <div class="col-lg-4 mb-4">
-                    <div class="pricing-card">
-                        <h3>Enterprise</h3>
-                        <div class="price-value">R$499<span>/mês</span></div>
-                        <ul class="features-list">
-                            <li><i class="fas fa-check"></i> Análises ilimitadas</li>
-                            <li><i class="fas fa-check"></i> Análise avançada de competências</li>
-                            <li><i class="fas fa-check"></i> API personalizada</li>
-                            <li><i class="fas fa-check"></i> Suporte 24/7</li>
-                            <li><i class="fas fa-check"></i> Treinamento personalizado</li>
-                            <li><i class="fas fa-check"></i> SLA garantido</li>
-                        </ul>
-                        <a href="/contact" class="btn btn-primary">Falar com Consultor</a>
-                    </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-light mb-4">Recursos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Central de
+                                Ajuda</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">API Docs</a>
+                        </li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Status</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Contato</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-muted"><i class="fas fa-envelope me-2"></i>contato@curriculoai.com
+                        </li>
+                        <li class="mb-2 text-muted"><i class="fas fa-phone me-2"></i>(11) 9999-9999</li>
+                        <li class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Criciúma - SC, Brasil
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2025 CurriculoAI. Todos os direitos
+                        reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="text-muted text-decoration-none me-3">Termos de
+                        Uso</a>
+                    <a href="#" class="text-muted text-decoration-none">Política de
+                        Privacidade</a>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Como Funciona Section -->
-    <section id="como-funciona" class="features py-5">
-        <div class="container">
-            <div class="section-title">
-                <h2>Como Funciona</h2>
-                <p>Conheça o processo simplificado de análise de currículos com nossa tecnologia de IA</p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-upload"></i>
-                        </div>
-                        <h3>1. Upload</h3>
-                        <p>Faça upload dos currículos em diversos formatos (PDF, DOCX, TXT)</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h3>2. Análise IA</h3>
-                        <p>Nossa IA analisa e extrai informações relevantes automaticamente</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-chart-bar"></i>
-                        </div>
-                        <h3>3. Resultados</h3>
-                        <p>Receba análises detalhadas e pontuações de compatibilidade</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card text-center">
-                        <div class="feature-icon mx-auto">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <h3>4. Decisão</h3>
-                        <p>Tome decisões informadas com base em dados concretos</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefícios Section -->
-    <section id="beneficios" class="py-5" style="background-color: var(--bg-dark);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Benefícios</h2>
-                <p>Por que escolher o CurriculAI para seu processo de recrutamento</p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-tachometer-alt"></i>
-                        </div>
-                        <h3>Economia de Tempo</h3>
-                        <p>Reduza o tempo de análise de currículos em até 90%, permitindo que sua equipe foque em atividades estratégicas.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Precisão</h3>
-                        <p>Nossa IA identifica os melhores candidatos com base em critérios objetivos, reduzindo vieses no processo seletivo.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Escalabilidade</h3>
-                        <p>Processe centenas ou milhares de currículos simultaneamente, sem comprometer a qualidade da análise.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Dados Estruturados</h3>
-                        <p>Transforme informações não estruturadas em dados organizados e acionáveis para sua empresa.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Melhor Experiência</h3>
-                        <p>Ofereça um processo seletivo mais ágil e transparente, melhorando a experiência dos candidatos.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <h3>Segurança</h3>
-                        <p>Seus dados estão protegidos com criptografia de ponta a ponta e conformidade com LGPD.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Depoimentos Section -->
-    <section id="depoimentos" class="py-5" style="background-color: var(--secondary-color);">
-        <div class="container">
-            <div class="section-title">
-                <h2>Depoimentos</h2>
-                <p>O que nossos clientes dizem sobre o CurriculAI</p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="img-fluid">
-                            </div>
-                            <div>
-                                <h4 class="mb-0">Ana Silva</h4>
-                                <p class="mb-0">Gerente de RH, TechCorp</p>
-                            </div>
-                        </div>
-                        <p>"Reduzimos nosso tempo de triagem de currículos em 85% desde que começamos a usar o CurriculAI. A precisão da análise nos ajudou a encontrar talentos que antes passariam despercebidos."</p>
-                        <div class="text-warning">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
-                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente" class="img-fluid">
-                            </div>
-                            <div>
-                                <h4 class="mb-0">Carlos Mendes</h4>
-                                <p class="mb-0">Diretor de Talentos, FinanceGroup</p>
-                            </div>
-                        </div>
-                        <p>"A integração do CurriculAI com nosso ATS foi perfeita. Agora conseguimos processar mais de 500 currículos por dia com uma equipe reduzida e resultados muito melhores."</p>
-                        <div class="text-warning">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="feature-card">
-                        <div class="d-flex align-items-center mb-4">
-                            <div class="rounded-circle overflow-hidden me-3" style="width: 60px; height: 60px;">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="img-fluid">
-                            </div>
-                            <div>
-                                <h4 class="mb-0">Patrícia Oliveira</h4>
-                                <p class="mb-0">CEO, StartupInova</p>
-                            </div>
-                        </div>
-                        <p>"Como startup, precisamos ser ágeis e eficientes. O CurriculAI nos permitiu competir por talentos com empresas muito maiores, graças à velocidade e qualidade do processo seletivo."</p>
-                        <div class="text-warning">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

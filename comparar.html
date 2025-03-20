@@ -126,7 +126,7 @@
     
         .form-check-input:checked {
             background-color: var(--accent-color);
-            border-color: var(--accent-color);
+            border-color: var (--accent-color);
         }
     
         .form-check-label {
@@ -533,6 +533,32 @@
         </div>
     </div>
 
+    <!-- Adicionar novo modal para notas de entrevista -->
+    <div class="modal fade" id="notasEntrevistaModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notas da Entrevista</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" id="curriculoIdNotas">
+                    <div class="mb-3">
+                        <label class="form-label">Anotações da Entrevista</label>
+                        <textarea class="form-control" id="entrevistaNotas" rows="6" 
+                            placeholder="Digite suas observações sobre a entrevista..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" onclick="salvarNotasEntrevista()">
+                        Salvar Notas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Carregar currículos disponíveis
         async function carregarCurriculos() {
@@ -582,6 +608,11 @@
                                         Selecionar para comparação
                                     </label>
                                 </div>
+                                <button class="btn btn-outline-primary btn-sm mt-2" 
+                                        onclick="abrirModalNotas('${curriculo.id}', '${curriculo.nome}')">
+                                    <i class="fas fa-sticky-note me-2"></i>
+                                    ${curriculo.entrevistaNotas ? 'Editar Notas' : 'Adicionar Notas'}
+                                </button>
                             </div>
                         </div>
                     `;
@@ -709,6 +740,7 @@
                                     <div class="ranking-badge">#${index + 1}</div>
                                     <div class="card-body text-center">
                                         <i class="fas fa-user-circle candidato-icone"></i>
+                                        <h5 class="card-title mb-3">${candidato.nome}</h5>
                                         <div class="card-content">
                                             <div class="resumo-preview mb-3 text-light">
                                                 ${candidato.pontosFortesResumo || candidato.pontosFortes?.[0] || 'Sem resumo disponível'}
@@ -960,6 +992,11 @@
                                         Selecionar para comparação
                                     </label>
                                 </div>
+                                <button class="btn btn-outline-primary btn-sm mt-2" 
+                                        onclick="abrirModalNotas('${curriculo.id}', '${curriculo.nome}')">
+                                    <i class="fas fa-sticky-note me-2"></i>
+                                    ${curriculo.entrevistaNotas ? 'Editar Notas' : 'Adicionar Notas'}
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1122,6 +1159,50 @@
             } catch (error) {
                 console.error('Erro ao carregar detalhes:', error);
                 alert('Erro ao carregar detalhes do currículo: ' + error.message);
+            }
+        }
+
+        // Add new function to handle interview notes
+        function abrirModalNotas(id, nome) {
+            document.getElementById('curriculoIdNotas').value = id;
+            const modal = new bootstrap.Modal(document.getElementById('notasEntrevistaModal'));
+            
+            // Carregar notas existentes
+            fetch('/curriculos')
+                .then(res => res.json())
+                .then(data => {
+                    const curriculo = data.curriculos.find(c => c.id === id);
+                    if (curriculo && curriculo.entrevistaNotas) {
+                        document.getElementById('entrevistaNotas').value = curriculo.entrevistaNotas.texto;
+                    } else {
+                        document.getElementById('entrevistaNotas').value = '';
+                    }
+                    modal.show();
+                });
+        }
+
+        async function salvarNotasEntrevista() {
+            const id = document.getElementById('curriculoIdNotas').value;
+            const notas = document.getElementById('entrevistaNotas').value;
+            
+            try {
+                const response = await fetch(`/curriculo/notas/${id}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ notas })
+                });
+                
+                if (!response.ok) throw new Error('Erro ao salvar notas');
+                
+                // Fechar modal e atualizar lista
+                bootstrap.Modal.getInstance(document.getElementById('notasEntrevistaModal')).hide();
+                aplicarFiltros(); // Recarrega a lista de currículos
+                
+            } catch (error) {
+                console.error('Erro ao salvar notas:', error);
+                alert('Erro ao salvar as notas da entrevista.');
             }
         }
 

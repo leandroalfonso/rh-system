@@ -377,18 +377,67 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/curriculos');
+                const data = await response.json();
+                console.log('Contextos carregados:', data);
+                
+                if (!data.curriculos || data.curriculos.length === 0) {
+                    const chatBox = document.getElementById('chat-box');
+                    chatBox.innerHTML = `
+                        <div class="message bot">
+                            <strong>Sistema</strong>
+                            <p>Bem-vindo ao Chat! Por favor, faça o upload de alguns currículos primeiro na seção Upload.</p>
+                            <p>Para começar, você pode:</p>
+                            <ul>
+                                <li>Ir para a seção de <a href="/upload" style="color: var(--accent-color)">Upload</a> para adicionar currículos</li>
+                                <li>Ou usar a seção de <a href="/comparar" style="color: var(--accent-color)">Comparação</a> depois de fazer upload</li>
+                            </ul>
+                        </div>
+                    `;
+                } else {
+                    // Adiciona mensagem inicial quando há currículos
+                    const chatBox = document.getElementById('chat-box');
+                    chatBox.innerHTML = `
+                        <div class="message bot">
+                            <strong>Sistema</strong>
+                            <p>Olá! Encontrei ${data.curriculos.length} currículo(s) disponível(is) para análise.</p>
+                            <p>Como posso ajudar você hoje?</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Erro ao carregar contextos:', error);
+                const chatBox = document.getElementById('chat-box');
+                chatBox.innerHTML = `
+                    <div class="message bot">
+                        <strong>Erro</strong>
+                        Não foi possível carregar os contextos. Por favor, verifique se os arquivos foram carregados corretamente.
+                    </div>
+                `;
+            }
+        });
+
         document.getElementById('chat-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const mensagemInput = document.getElementById('mensagem');
             const mensagem = mensagemInput.value.trim();
+            
             if (!mensagem) return;
 
-            adicionarMensagem('Você', mensagem, 'user');
-            mensagemInput.value = '';
-
             try {
-                console.log('Enviando mensagem para o servidor:', mensagem);
+                // Adiciona mensagem do usuário
+                adicionarMensagem('Você', mensagem, 'user');
+                mensagemInput.value = '';
+
+                // Adiciona indicador de digitação
+                const chatBox = document.getElementById('chat-box');
+                const typingIndicator = document.createElement('div');
+                typingIndicator.className = 'message bot typing';
+                typingIndicator.innerHTML = '<strong>Assistente</strong><div class="typing-indicator">Digitando<span>.</span><span>.</span><span>.</span></div>';
+                chatBox.appendChild(typingIndicator);
 
                 const resposta = await fetch('/chat', {
                     method: 'POST',
@@ -398,17 +447,23 @@
                     body: JSON.stringify({ mensagem }),
                 });
 
+                // Remove indicador de digitação
+                typingIndicator.remove();
+
                 const data = await resposta.json();
-                console.log('Resposta recebida do servidor:', data);
+                
+                if (!resposta.ok) {
+                    throw new Error(data.error || 'Erro ao processar a mensagem');
+                }
 
                 if (data.resposta) {
                     adicionarMensagem('Assistente', data.resposta, 'bot');
                 } else {
-                    adicionarMensagem('Erro', 'Não foi possível obter uma resposta.', 'bot');
+                    throw new Error('Resposta vazia do servidor');
                 }
             } catch (error) {
                 console.error('Erro ao enviar mensagem:', error);
-                adicionarMensagem('Erro', 'Ocorreu um erro ao enviar a mensagem.', 'bot');
+                adicionarMensagem('Erro', 'Desculpe, ocorreu um erro ao processar sua mensagem. Por favor, tente novamente.', 'bot');
             }
         });
 
