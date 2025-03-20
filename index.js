@@ -617,9 +617,15 @@ app.post('/chat', async (req, res) => {
         const maxContextoTokens = 3000; // Ajustar para manter margem de segurança
         const maxMensagemTokens = 1000;
 
-        const contextoTruncado = contextoAtual.length > maxContextoTokens 
-            ? contextoAtual.substring(0, maxContextoTokens) + '... [Contexto truncado]' 
-            : contextoAtual;
+        // Truncar o contexto preservando múltiplos currículos
+        const contextoTruncado = contextoAtual.split('\n\n=== PRÓXIMO CURRÍCULO ===\n\n')
+            .reduce((acc, curr) => {
+                if (acc.length + curr.length <= maxContextoTokens) {
+                    acc.push(curr);
+                }
+                return acc;
+            }, [])
+            .join('\n\n=== PRÓXIMO CURRÍCULO ===\n\n');
 
         const mensagemTruncada = mensagem.length > maxMensagemTokens 
             ? mensagem.substring(0, maxMensagemTokens) + '... [Mensagem truncada]' 
