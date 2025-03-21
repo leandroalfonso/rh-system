@@ -2,11 +2,19 @@
   "version": 2,
   "builds": [
     {
+      "src": "upload.html",
+      "use": "@vercel/static"
+    },
+    {
       "src": "index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
+    {
+      "src": "^/upload/?$",
+      "dest": "/upload.html"
+    },
     {
       "src": "/(.*)",
       "dest": "index.js"

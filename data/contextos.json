@@ -27,8 +27,8 @@
     "dataCriacao": "2025-03-20T12:09:54.948Z",
     "ultimaAtualizacao": "2025-03-20T12:09:54.948Z",
     "entrevistaNotas": {
-      "texto": "casada a 1 ano, tem 2 filhos",
-      "dataAtualizacao": "2025-03-20T13:27:26.072Z",
+      "texto": "mora 20 min da empresa.",
+      "dataAtualizacao": "2025-03-21T01:49:35.223Z",
       "historico": [
         {
           "texto": "hobby, andar de bicicletas.",
@@ -37,6 +37,10 @@
         {
           "texto": "casada a 1 ano, tem 2 filhos",
           "dataAtualizacao": "2025-03-20T13:27:26.072Z"
+        },
+        {
+          "texto": "mora 20 min da empresa.",
+          "dataAtualizacao": "2025-03-21T01:49:35.222Z"
         }
       ]
     }
@@ -108,43 +112,6 @@
     "ultimaAtualizacao": "2025-03-20T12:10:33.178Z",
     "entrevistaNotas": null
   },
-  "1742474734202-igmksv5lx": {
-    "id": "1742474734202-igmksv5lx",
-    "nome": "** Mariana Souza",
-    "conteudo": "Aqui está a extração de informações do currículo:\n\n**\n**RESUMO PROFISSIONAL:** Profissional de manutenção com 5 anos de experiência, buscando oportunidades para aplicar conhecimentos em manutenção preventiva e corretiva, contribuindo para a eficiência operacional da empresa.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n1. **Técnica de Manutenção Pleno**\n\t* **Empresa:** Indústria XYZ\n\t* **Cargo:** Técnica de Manutenção Pleno\n\t* **Período:** Março de 2021 – Presente\n\t* **Responsabilidades:**\n\t\t+ Realização de manutenção preventiva e corretiva em máquinas industriais.\n\t\t+ Diagnóstico e solução de falhas mecânicas e elétricas.\n\t\t+ Implementação de melhorias nos equipamentos, aumentando a eficiência em 15%.\n\t* **Projetos:**\n\t\t+ Não há mencionado\n\t* **Conquistas:**\n\t\t+ Não há mencionado\n\t* **Tecnologias utilizadas:**\n\t\t+ Não há mencionado\n2. **Assistente de Manutenção**\n\t* **Empresa:** Empresa ABC\n\t* **Cargo:** Assistente de Manutenção\n\t* **Período:** Janeiro de 2019 – Fevereiro de 2021\n\t* **Responsabilidades:**\n\t\t+ Apoio na manutenção de equipamentos de produção.\n\t\t+ Monitoramento de indicadores de desempenho das máquinas.\n\t\t+ Participação na instalação de novos equipamentos.\n\t* **Projetos:**\n\t\t+ Não há mencionado\n\t* **Conquistas:**\n\t\t+ Não há mencionado\n\t* **Tecnologias utilizadas:**\n\t\t+ Não há mencionado\n\n**FORMAÇÃO ACADÊMICA:**\n\n1. **Curso Técnico em Mecânica**\n\t* **Instituição:** Instituto Federal do Paraná (IFPR)\n\t* **Período:** 2019\n\t* **Trabalhos relevantes:**\n\t\t+ Não há mencionado\n\t* **Média/Notas:** Não há mencionado\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:** Conhecimento em mecânica, elétrica e hidráulica.\n* **Soft Skills:** Leitura e interpretação de desenhos técnicos, domínio de ferramentas de diagnóstico e medição, capacidade de trabalhar em equipe e resolver problemas.\n* **Nível de proficiência:** Não há mencionado.\n\n**CERTIFICAÇÕES:**\n\n1. **NR-10: Segurança em Instalações e Serviços com Eletricidade**\n\t* **Instituição:** 2020\n\t* **Data/Validade:** 2020\n\t* **Código/ID:** Não há mencionado\n2. **NR-35: Trabalho em Altura**\n\t* **Instituição:** 2021\n\t* **Data/Validade:** 2021\n\t* **Código/ID:** Não há mencionado\n\n**IDIOMAS:**\n\n* **Idioma:** Não há mencionado\n* **Nível:** Não há mencionado\n* **Certificações:** Não há mencionado\n\n**PROJETOS:** Não há mencionado\n\n**CONQUISTAS E REALIZAÇÕES:** Não há mencionado\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não há mencionado\n* **Localização:** Curitiba, PR\n* **Preferências de trabalho:** Não há mencionado\n* **Objetivos profissionais:** Não há mencionado\n* **Links:** Não há mencionado\n* **Publicações:** Não há mencionado\n* **Palestras:** Não há mencionado\n* **Participação em eventos:** Não há mencionado\n* **Voluntariado:** Não há mencionado",
-    "categorias": {
-      "areaPrincipal": "Manutenção",
-      "areasSecundarias": [
-        "Indústria",
-        "Mecânica",
-        "Eletricidade",
-        "Hidráulica"
-      ],
-      "palavrasChave": [
-        "Manutenção preventiva",
-        "Manutenção corretiva",
-        "Eficiência operacional"
-      ],
-      "nivel": "Pleno",
-      "categoriasEspecificas": [
-        "Desenvolvimento de Manutenção",
-        "Análise de Falhas",
-        "Implementação de Melhorias"
-      ]
-    },
-    "dataCriacao": "2025-03-20T12:45:34.202Z",
-    "ultimaAtualizacao": "2025-03-20T12:45:34.202Z",
-    "entrevistaNotas": {
-      "historico": [
-        {
-          "texto": "Mariana souza é casada, tem 2 filhos e seu marido trabalha na empresa ldodev ",
-          "dataAtualizacao": "2025-03-20T13:35:11.514Z"
-        }
-      ],
-      "texto": "Mariana souza é casada, tem 2 filhos e seu marido trabalha na empresa ldodev ",
-      "dataAtualizacao": "2025-03-20T13:35:11.514Z"
-    }
-  },
   "1742474772388-yxdlblp8d": {
     "id": "1742474772388-yxdlblp8d",
     "nome": "** Leandro Meira Alfonso",
@@ -176,8 +143,45 @@
     "dataCriacao": "2025-03-20T12:46:12.388Z",
     "ultimaAtualizacao": "2025-03-20T12:46:12.388Z",
     "entrevistaNotas": {
-      "texto": "Profissional, tem 1 filho, casado a 16 anos. com sara carvalho.\ncaseiro, seu hobby é programar, e esta terminando sua faculdade de TGTI(gestão de tecnologia da informação)",
-      "dataAtualizacao": "2025-03-20T12:48:12.523Z"
+      "texto": "profissional, tem experiencia de mais 12 anos em programação orientada a objetos, alem de experiencia em SQL, e sql injection",
+      "dataAtualizacao": "2025-03-21T15:17:09.531Z",
+      "historico": [
+        {
+          "texto": "Profissional, tem 1 filho, casado a 16 anos. com sara carvalho.\ncaseiro, seu hobby é programar, e esta terminando sua faculdade de TGTI(gestão de tecnologia da informação)",
+          "dataAtualizacao": "2025-03-21T03:08:50.788Z"
+        },
+        {
+          "texto": "profissional, tem experiencia de mais 12 anos em programação orientada a objetos, alem de experiencia em SQL, e sql injection",
+          "dataAtualizacao": "2025-03-21T15:17:09.531Z"
+        }
+      ]
     }
+  },
+  "1742525709372-mxxaqpedo": {
+    "id": "1742525709372-mxxaqpedo",
+    "nome": "** Mariana Souza",
+    "conteudo": "Aqui está a análise do currículo de Mariana Souza:\n\n**\n**RESUMO PROFISSIONAL:**\nProfissional de manutenção com 5 anos de experiência, buscando oportunidades para aplicar conhecimentos em manutenção preventiva e corretiva, contribuindo para a eficiência operacional da empresa.\n\n**EXPERIÊNCIA PROFISSIONAL:**\n\n1. **Técnica de Manutenção Pleno**\n\t* **Empresa:** Indústria XYZ\n\t* **Cargo:** Técnica de Manutenção Pleno\n\t* **Período:** Março de 2021 – Presente\n\t* **Responsabilidades:**\n\t\t+ Realização de manutenção preventiva e corretiva em máquinas industriais\n\t\t+ Diagnóstico e solução de falhas mecânicas e elétricas\n\t\t+ Implementação de melhorias nos equipamentos, aumentando a eficiência em 15%\n\t* **Projetos:**\n\t\t+ Nenhuma menção específica\n\t* **Conquistas:**\n\t\t+ Implementação de melhorias nos equipamentos, aumentando a eficiência em 15%\n\t* **Tecnologias utilizadas:**\n\t\t+ Não mencionadas\n2. **Assistente de Manutenção**\n\t* **Empresa:** Empresa ABC\n\t* **Cargo:** Assistente de Manutenção\n\t* **Período:** Janeiro de 2019 – Fevereiro de 2021\n\t* **Responsabilidades:**\n\t\t+ Apoio na manutenção de equipamentos de produção\n\t\t+ Monitoramento de indicadores de desempenho das máquinas\n\t\t+ Participação na instalação de novos equipamentos\n\t* **Projetos:**\n\t\t+ Nenhuma menção específica\n\t* **Conquistas:**\n\t\t+ Nenhuma menção específica\n\t* **Tecnologias utilizadas:**\n\t\t+ Não mencionadas\n\n**FORMAÇÃO ACADÊMICA:**\n\n1. **Curso Técnico em Mecânica**\n\t* **Instituição:** Instituto Federal do Paraná (IFPR)\n\t* **Período:** Conclusão em 2019\n\t* **Trabalhos relevantes:**\n\t\t+ Nenhuma menção específica\n\t* **Média/Notas:**\n\t\t+ Nenhuma menção específica\n\n**HABILIDADES TÉCNICAS:**\n\n* **Hard Skills:**\n\t+ Conhecimento em mecânica, elétrica e hidráulica\n\t+ Leitura e interpretação de desenhos técnicos\n\t+ Domínio de ferramentas de diagnóstico e medição\n* **Soft Skills:**\n\t+ Capacidade de trabalhar em equipe e resolver problemas\n\t+ Disponibilidade para trabalhar em turnos e realizar viagens\n* **Nível de proficiência (quando mencionado):**\n\t+ Nenhuma menção específica\n\n**CERTIFICAÇÕES:**\n\n1. **NR-10: Segurança em Instalações e Serviços com Eletricidade**\n\t* **Instituição:** Nenhuma menção específica\n\t* **Data/Validade:** 2020\n\t* **Código/ID:** Nenhuma menção específica\n2. **NR-35: Trabalho em Altura**\n\t* **Instituição:** Nenhuma menção específica\n\t* **Data/Validade:** 2021\n\t* **Código/ID:** Nenhuma menção específica\n\n**IDIOMAS:**\n\n* **Idioma:** Não mencionado\n* **Nível:** Não mencionado\n* **Certificações:** Não mencionadas\n\n**PROJETOS:**\n\n* **Nome:** Nenhuma menção específica\n* **Descrição:** Nenhuma menção específica\n* **Tecnologias:** Nenhuma menção específica\n* **Resultados:** Nenhuma menção específica\n\n**CONQUISTAS E REALIZAÇÕES:**\n\n* **Conquistas profissionais:**\n\t+ Implementação de melhorias nos equipamentos, aumentando a eficiência em 15%\n* **Conquistas pessoais:**\n\t+ Nenhuma menção específica\n\n**INFORMAÇÕES ADICIONAIS:**\n\n* **Disponibilidade:** Não mencionada\n* **Localização:** Curitiba, PR\n* **Preferências de trabalho:** Não mencionadas\n* **Objetivos profissionais:** Buscar oportunidades para aplicar conhecimentos em manutenção preventiva e corretiva, contribuindo para a eficiência operacional da empresa\n* **Links (GitHub, LinkedIn, Portfolio):** Não mencionados\n* **Publicações:** Nenhuma menção específica\n* **Palestras:** Nenhuma menção específica\n* **Participação em eventos:** Nenhuma menção específica\n* **Voluntariado:** Nenhuma menção específica\n\n**FORMAÇÃO COMPLEMENTAR:**\n\n1. **Curso de Manutenção Preditiva**\n\t* **Instituição:** SENAI\n\t* **Período:** 2022\n\t* **Trabalhos relevantes:** Nenhuma menção específica\n2. **Workshop de Eficiência Energética**\n\t* **Instituição:** Nenhuma menção específica\n\t* **Período:** 2023\n\t* **Trabalhos relevantes:** Nenhuma menção específica",
+    "categorias": {
+      "areaPrincipal": "Manutenção",
+      "areasSecundarias": [
+        "Indústria",
+        "Mecânica",
+        "Eletricidade"
+      ],
+      "palavrasChave": [
+        "Manutenção preventiva",
+        "Manutenção corretiva",
+        "Eficiência operacional"
+      ],
+      "nivel": "Pleno",
+      "categoriasEspecificas": [
+        "Desenvolvimento de Manutenção",
+        "Manutenção Preditiva",
+        "Eficiência Energética"
+      ]
+    },
+    "dataCriacao": "2025-03-21T02:55:09.372Z",
+    "ultimaAtualizacao": "2025-03-21T02:55:09.372Z",
+    "entrevistaNotas": null
   }
 }

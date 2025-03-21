@@ -1582,3 +1582,16 @@ app.post('/curriculo/notas/:id', async (req, res) => {
         });
     }
 });
+
+// Rota para deletar um currículo (endpoint revisado)
+app.delete('/curriculo/:id', (req, res) => {
+    const id = req.params.id;
+    const contextos = carregarTodosContextos();
+    if (!contextos[id]) {
+        return res.status(404).json({ error: 'Currículo não encontrado' });
+    }
+    delete contextos[id];
+    // Atualiza o arquivo JSON
+    fs.writeFileSync(contextosPath, JSON.stringify(contextos, null, 2));
+    res.json({ success: true });
+});

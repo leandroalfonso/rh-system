@@ -638,24 +638,16 @@
         }
 
         async function deletarCurriculo(id, element) {
-            if (!confirm('Tem certeza que deseja excluir este currículo?')) {
-                return;
-            }
+            if (!confirm('Tem certeza que deseja excluir este currículo?')) return;
             try {
-                const response = await fetch(`/curriculo/${id}`, {
-                    method: 'DELETE'
-                });
-
+                // Alterado o endpoint para o singular "/curriculo/" (se sua API estiver configurada assim)
+                const response = await fetch(`/curriculo/${id}`, { method: 'DELETE' });
                 if (!response.ok) {
                     throw new Error('Erro ao deletar currículo');
                 }
-
                 // Remove o card do DOM
-                element.closest('.col-md-4').remove();
-
-                // Atualiza o botão de comparação
+                element.closest('.col-md-4')?.remove();
                 updateCompareButton();
-
             } catch (error) {
                 console.error('Erro:', error);
                 alert('Erro ao deletar currículo: ' + error.message);
@@ -729,8 +721,14 @@
             const resultado = document.getElementById('resultado');
             resultado.style.display = 'block';
             try {
-                const candidatosHTML = data.analise.candidatos
-                    .sort((a, b) => a.ranking - b.ranking)
+                // Ordena candidatos considerando ranking; se não definido, trata como Infinity.
+                const candidatosOrdenados = data.analise.candidatos.sort((a, b) => {
+                    const rankA = (typeof a.ranking === 'number') ? a.ranking : Infinity;
+                    const rankB = (typeof b.ranking === 'number') ? b.ranking : Infinity;
+                    return rankA - rankB;
+                });
+                
+                const candidatosHTML = candidatosOrdenados
                     .map((candidato, index) => {
                         const isBestCandidate = index === 0;
                         return `
@@ -743,15 +741,14 @@
                                         <h5 class="card-title mb-3">${candidato.nome}</h5>
                                         <div class="card-content">
                                             <div class="resumo-preview mb-3 text-light">
-                                                ${candidato.pontosFortesResumo || candidato.pontosFortes?.[0] || 'Sem resumo disponível'}
+                                                ${candidato.pontosFortesResumo || (candidato.pontosFortes ? candidato.pontosFortes[0] : 'Sem resumo disponível')}
                                             </div>
                                             <div class="habilidades-preview">
                                                 ${(candidato.habilidadesTecnicas || []).slice(0, 3).map(hab => 
                                                     `<span class="badge bg-primary">${hab}</span>`
                                                 ).join('')}
-                                                ${candidato.habilidadesTecnicas?.length > 3 ? 
-                                                    `<span class="badge bg-secondary">+${candidato.habilidadesTecnicas.length - 3}</span>` : 
-                                                    ''}
+                                                ${(candidato.habilidadesTecnicas && candidato.habilidadesTecnicas.length > 3) ? 
+                                                    `<span class="badge bg-secondary">+${candidato.habilidadesTecnicas.length - 3}</span>` : ''}
                                             </div>
                                         </div>
                                         <div class="view-more mt-2">
@@ -765,7 +762,7 @@
                             </div>
                         `;
                     }).join('');
-
+      
                 resultado.innerHTML = `
                     <h3 class="text-light">Análise Comparativa</h3>
                     <div class="row mt-4">
@@ -778,7 +775,6 @@
                         <p class="text-light">${data.analise.recomendacaoFinal || 'Recomendação em processamento...'}</p>
                     </div>
                 `;
-
             } catch (error) {
                 console.error('Erro ao mostrar análise:', error);
                 resultado.innerHTML = `

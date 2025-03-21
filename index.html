@@ -378,6 +378,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', async () => {
+            carregarContexto();
             try {
                 const response = await fetch('/curriculos');
                 const data = await response.json();
@@ -418,6 +419,19 @@
                 `;
             }
         });
+
+        async function carregarContexto() {
+            try {
+                const response = await fetch('/data/contextos.json');
+                const contextos = await response.json();
+                console.log('Contextos carregados:', contextos);
+                // Armazena os contextos ou atualize o assistente conforme sua necessidade
+                localStorage.setItem('contextos', JSON.stringify(contextos));
+                // ...opcional: atualizar algum elemento na página com os dados...
+            } catch (error) {
+                console.error('Erro ao carregar contextos:', error);
+            }
+        }
 
         document.getElementById('chat-form').addEventListener('submit', async (e) => {
             e.preventDefault();
