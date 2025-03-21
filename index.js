@@ -1349,7 +1349,7 @@ app.post('/curriculo/notas/:id', async (req, res) => {
         contextos[id].entrevistaNotas.dataAtualizacao = new Date().toISOString();
 
         // Save to file
-        const dataPath = path.join(dataDir, 'contextos.json');
+        const dataPath = path.join(dataDir, 'https://rh-system-lemon.vercel.app/contextos.json');
         fs.writeFileSync(dataPath, JSON.stringify(contextos, null, 2));
 
         res.json({ 
@@ -1368,7 +1368,7 @@ app.post('/curriculo/notas/:id', async (req, res) => {
 
 function carregarTodosContextos() {
     try {
-        const dataPath = path.join(dataDir, 'contextos.json');
+        const dataPath = path.join(dataDir, 'https://rh-system-lemon.vercel.app/contextos.json');
         if (!fs.existsSync(dataPath)) {
             // Ensure directory exists
             if (!fs.existsSync(dataDir)) {
